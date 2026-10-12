@@ -65,6 +65,18 @@ function adaptGoogleTrendsItem(item) {
   };
 }
 
+// Some feeds (e.g. 한국은행) double-escape entities, leaving "&middot;" in titles
+const NAMED_ENTITIES = { amp: "&", lt: "<", gt: ">", quot: '"', apos: "'", nbsp: " ", middot: "·" };
+function decodeEntities(text) {
+  return text.replace(/&(#x?[\da-f]+|[a-z]+);/gi, (match, code) => {
+    if (code[0] === "#") {
+      const n = code[1].toLowerCase() === "x" ? parseInt(code.slice(2), 16) : Number(code.slice(1));
+      return Number.isFinite(n) ? String.fromCodePoint(n) : match;
+    }
+    return NAMED_ENTITIES[code.toLowerCase()] ?? match;
+  });
+}
+
 async function fetchFeed(feed) {
   const text = await fetchFeedText(feed.url);
   const parsed = await parser.parseString(text);
@@ -77,7 +89,7 @@ async function fetchFeed(feed) {
         item.isoDate ?? (item.pubDate ? new Date(item.pubDate).toISOString() : null);
       return {
         id: linkId(link),
-        title: (item.title ?? "").trim(),
+        title: decodeEntities((item.title ?? "").trim()),
         link,
         source: feed.name,
         sourceId: feed.id,
@@ -87,7 +99,10 @@ async function fetchFeed(feed) {
         ...(item.traffic ? { traffic: item.traffic } : {}),
       };
     })
-    .filter(Boolean);
+    .filter(Boolean)
+    .filter(
+      (item) => !feed.titleMustInclude || feed.titleMustInclude.some((t) => item.title.includes(t))
+    );
   return items;
 }
 

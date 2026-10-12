@@ -11,6 +11,8 @@ export const CATEGORY_EMOJI = {
   "검색 트렌드": "🔎",
   "GitHub 트렌딩": "⭐",
   "AI 활용": "🛠️",
+  "연구 보고서": "📑",
+  "해외 연구": "🌐",
 };
 
 // Still collected for the dashboard, but left out of Discord messages.

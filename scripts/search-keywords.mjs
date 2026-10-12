@@ -22,6 +22,17 @@ export const SEARCH_GROUPS = [
     category: "AI 활용",
     phrases: ["생성형 AI 도입", "AI 활용 사례", "AI 전환", "AX 전환"],
   },
+  // Institutes without their own RSS (KDI, 자본시장연구원 etc.): coverage of
+  // their reports. Google News matches body text too, so keep only headlines
+  // that actually name an institute.
+  {
+    id: "kr-institute-reports",
+    name: "국내 연구소 보고서 뉴스",
+    category: "연구 보고서",
+    phrases: ["KDI", "자본시장연구원", "한국금융연구원", "현대경제연구원", "대외경제정책연구원", "LG경영연구원"],
+    suffix: "보고서",
+    titleMustInclude: ["KDI", "연구원"],
+  },
 ];
 
 // Tags attached to every collected item (any feed) whose title or snippet
@@ -37,7 +48,8 @@ export const TAGS = {
 // Google News caps a search at 100 results sorted by relevance; `when:7d`
 // keeps them recent instead of surfacing year-old evergreen articles.
 export function searchGroupUrl(group) {
-  const query = `(${group.phrases.map((p) => `"${p}"`).join(" OR ")}) when:7d`;
+  const phrases = group.phrases.map((p) => `"${p}"`).join(" OR ");
+  const query = `(${phrases})${group.suffix ? ` ${group.suffix}` : ""} when:7d`;
   return `https://news.google.com/rss/search?q=${encodeURIComponent(query)}&hl=ko&gl=KR&ceid=KR:ko`;
 }
 

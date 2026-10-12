@@ -9,6 +9,8 @@ const CATEGORY_EMOJI = {
   "검색 트렌드": "🔎",
   "GitHub 트렌딩": "⭐",
   "AI 활용": "🛠️",
+  "연구 보고서": "📑",
+  "해외 연구": "🌐",
 };
 
 const THEME_KEY = "mynews:theme";
@@ -83,9 +85,9 @@ function cardHtml(item, bookmarks) {
     <div class="card">
       <button class="bookmark-btn${marked ? " active" : ""}" data-id="${item.id}" aria-label="즐겨찾기 토글">${marked ? "★" : "☆"}</button>
       <div class="card-body">
-        <a href="${item.link}" target="_blank" rel="noopener">${item.title}</a>
-        <div class="meta">${item.source} · ${fmtTime(item.publishedAt)}</div>
-        ${item.snippet ? `<div class="snippet">${item.snippet}</div>` : ""}
+        <a href="${escapeHtml(item.link)}" target="_blank" rel="noopener">${escapeHtml(item.title)}</a>
+        <div class="meta">${escapeHtml(item.source)} · ${fmtTime(item.publishedAt)}</div>
+        ${item.snippet ? `<div class="snippet">${escapeHtml(item.snippet)}</div>` : ""}
         ${
           item.tags?.length
             ? `<div class="tags">${item.tags.map((t) => `<span class="tag">#${escapeHtml(t)}</span>`).join("")}</div>`
@@ -438,9 +440,9 @@ async function initStatus() {
     .map(
       (f) => `
         <tr class="${f.ok ? "ok" : "fail"}">
-          <td>${f.name}</td>
+          <td>${escapeHtml(f.name)}</td>
           <td>${f.ok ? "✅ 정상" : "⚠️ 실패"}</td>
-          <td>${f.ok ? `${f.count}건` : f.error}</td>
+          <td>${f.ok ? `${f.count}건` : escapeHtml(f.error)}</td>
         </tr>
       `
     )

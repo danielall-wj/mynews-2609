@@ -97,11 +97,57 @@ export const FEEDS = [
     url: "https://mshibanami.github.io/GitHubTrendingRSS/daily/all.xml",
     category: "GitHub 트렌딩",
   },
+  // --- Research reports ---
+  {
+    id: "bok-issue-notes",
+    name: "한국은행 이슈노트",
+    url: "https://www.bok.or.kr/portal/bbs/P0002353/news.rss?menuNo=200433",
+    category: "연구 보고서",
+  },
+  {
+    id: "bok-research",
+    name: "한국은행 경제연구",
+    url: "https://www.bok.or.kr/portal/bbs/P0002454/news.rss?menuNo=200434",
+    category: "연구 보고서",
+  },
+  // NBER's feed is omitted on purpose: its items carry no dates, so every run
+  // would re-stamp them as new and they'd top the daily digest forever.
+  {
+    id: "bis-research",
+    name: "BIS 연구",
+    url: "https://www.bis.org/doclist/reshub_papers.rss",
+    category: "해외 연구",
+  },
+  {
+    id: "ecb-blog",
+    name: "ECB 블로그",
+    url: "https://www.ecb.europa.eu/rss/blog.html",
+    category: "해외 연구",
+  },
+  {
+    id: "ny-fed-liberty-street",
+    name: "뉴욕연준 Liberty Street",
+    url: "https://libertystreeteconomics.newyorkfed.org/feed/",
+    category: "해외 연구",
+  },
+  {
+    id: "voxeu",
+    name: "VoxEU (CEPR)",
+    url: "https://cepr.org/rss/vox-content",
+    category: "해외 연구",
+  },
+  {
+    id: "bruegel",
+    name: "Bruegel",
+    url: "https://www.bruegel.org/rss.xml",
+    category: "해외 연구",
+  },
   // Keyword searches, one Google News feed per group in search-keywords.mjs
   ...SEARCH_GROUPS.map((group) => ({
     id: group.id,
     name: group.name,
     url: searchGroupUrl(group),
     category: group.category,
+    titleMustInclude: group.titleMustInclude,
   })),
 ];
