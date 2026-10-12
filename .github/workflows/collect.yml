@@ -2,7 +2,9 @@ name: Collect RSS news
 
 on:
   schedule:
-    - cron: "0 */2 * * *"
+    # Off the top of the hour: GitHub delays :00 schedules the most (runs
+    # were landing 2–6h late)
+    - cron: "17 */2 * * *"
   workflow_dispatch: {}
 
 permissions:
@@ -31,10 +33,18 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add docs/data
-          if git diff --cached --quiet; then
-            echo "No changes to commit."
-          else
-            git commit -m "chore: update collected news"
-            git push
+          # meta.json/trends.json change on every run; only commit when the
+          # news itself changed, to keep history from ballooning
+          if git diff --quiet -- docs/data/latest.json docs/data/archive; then
+            echo "No new items; skipping commit."
+            exit 0
           fi
+          git add docs/data
+          git commit -m "chore: update collected news"
+          # Someone may have pushed code while we were collecting
+          for attempt in 1 2 3; do
+            git pull --rebase && git push && exit 0
+            echo "Push attempt $attempt failed; retrying"
+            sleep $((attempt * 10))
+          done
+          exit 1

@@ -1,10 +1,14 @@
 import path from "node:path";
 import { DATA_DIR, readArchiveSince, readJson } from "./archive.mjs";
 import {
+  DASHBOARD_URL,
   EXCLUDED_CATEGORIES,
   categoryLabel,
   escapeMarkdownTitle,
-  sendToDiscord,
+  joinLines,
+  lastKstBoundary,
+  packMessages,
+  sendMessages,
 } from "./discord.mjs";
 import { computeRising, topKeywords } from "./keywords.mjs";
 
@@ -35,7 +39,7 @@ function categoryEmbed(thisWeek, lastWeek) {
     );
   return {
     title: `📊 카테고리별 기사 수 (총 ${thisWeek.length}건, 지난주 ${lastWeek.length}건)`,
-    description: lines.join("\n") || "수집된 기사가 없습니다.",
+    description: joinLines(lines, 4000) || "수집된 기사가 없습니다.",
     color: 0x5865f2,
   };
 }
@@ -59,7 +63,10 @@ function keywordEmbed(thisWeek, lastWeek, related) {
     : "";
   return {
     title: "📈 이번 주 키워드",
-    description: `**급상승**\n${risingText}\n\n**많이 언급된 키워드**\n${topText}${relatedText}`.slice(0, 4000),
+    description: joinLines(
+      `**급상승**\n${risingText}\n\n**많이 언급된 키워드**\n${topText}${relatedText}`.split("\n"),
+      4000
+    ),
     color: 0xf0b232,
   };
 }
@@ -76,20 +83,22 @@ function signalEmbed(thisWeek) {
   if (searches.length) {
     fields.push({
       name: "🔎 구글 인기 검색어",
-      value: searches
-        .map((i) => `[${escapeMarkdownTitle(i.title)}](${i.link})${i.traffic ? ` ${i.traffic.toLocaleString()}+` : ""}`)
-        .join("\n")
-        .slice(0, 1024),
+      value: joinLines(
+        searches.map(
+          (i) => `[${escapeMarkdownTitle(i.title)}](${i.link})${i.traffic ? ` ${i.traffic.toLocaleString()}+` : ""}`
+        ),
+        1024
+      ),
       inline: true,
     });
   }
   if (repos.length) {
     fields.push({
       name: "⭐ GitHub 트렌딩",
-      value: repos
-        .map((i) => `[${escapeMarkdownTitle(i.title)}](${i.link})`)
-        .join("\n")
-        .slice(0, 1024),
+      value: joinLines(
+        repos.map((i) => `[${escapeMarkdownTitle(i.title)}](${i.link})`),
+        1024
+      ),
       inline: true,
     });
   }
@@ -97,12 +106,13 @@ function signalEmbed(thisWeek) {
 }
 
 async function main() {
-  const now = Date.now();
+  // Fixed Monday-09:00-KST week, so a delayed run reports the same week
+  const now = lastKstBoundary(Date.now(), 9, 1);
   const all = (await readArchiveSince(now - 2 * WEEK_MS)).filter(
     (item) => !EXCLUDED_CATEGORIES.has(item.category)
   );
   const at = (item) => new Date(item.publishedAt).getTime();
-  const thisWeek = all.filter((i) => at(i) >= now - WEEK_MS && at(i) <= now);
+  const thisWeek = all.filter((i) => at(i) >= now - WEEK_MS && at(i) < now);
   const lastWeek = all.filter((i) => at(i) < now - WEEK_MS);
 
   const trends = await readJson(path.join(DATA_DIR, "trends.json"), null);
@@ -114,10 +124,12 @@ async function main() {
     signalEmbed(thisWeek),
   ].filter(Boolean);
 
-  await sendToDiscord({
-    content: `🗓️ **주간 트렌드 리포트** (${fmt(now - WEEK_MS)} ~ ${fmt(now)})`,
-    embeds,
-  });
+  await sendMessages(
+    packMessages(
+      `🗓️ **주간 트렌드 리포트** (${fmt(now - WEEK_MS)} ~ ${fmt(now)}) · [대시보드](${DASHBOARD_URL})`,
+      embeds
+    )
+  );
   console.log(`Sent weekly report: ${thisWeek.length} items this week, ${lastWeek.length} last week.`);
 }
 

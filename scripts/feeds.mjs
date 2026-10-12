@@ -1,11 +1,17 @@
 import { SEARCH_GROUPS, searchGroupUrl } from "./search-keywords.mjs";
 
+// Optional per-feed fields: `timezone` for zone-less pubDates, `exclude`
+// (regexes tested against title + publisher + snippet), `titleMustInclude`.
 export const FEEDS = [
   {
     id: "aitimes",
     name: "AI타임스",
     url: "https://www.aitimes.com/rss/allArticle.xml",
     category: "AI",
+    // pubDate comes as "2026-10-12 18:00:00" in KST with no zone
+    timezone: "+09:00",
+    // Auto-generated local event clips ("AI 생성 영상"), not AI news
+    exclude: [/AI 생성 영상/],
   },
   {
     id: "openai",
@@ -65,6 +71,8 @@ export const FEEDS = [
       "날씨 기상특보 OR 예보"
     )}&hl=ko&gl=KR&ceid=KR:ko`,
     category: "날씨",
+    // Vietnamese weather forecasts machine-translated into Korean
+    exclude: [/vietnam\.vn/i],
   },
   {
     id: "gov-support",

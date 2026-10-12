@@ -425,3 +425,37 @@ footer {
   border-radius: 4px;
   padding: 1px 5px;
 }
+
+.dup-badge {
+  margin-left: 6px;
+  background: var(--tag-bg);
+  color: var(--accent);
+  border-radius: 999px;
+  padding: 1px 7px;
+  font-size: 11px;
+  cursor: help;
+}
+
+.more-btn {
+  width: 100%;
+  background: var(--panel);
+  border: 1px dashed var(--border);
+  color: var(--muted);
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.more-btn:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.status-table tr.stale td {
+  color: var(--muted);
+}
+
+#status-content {
+  overflow-x: auto;
+}

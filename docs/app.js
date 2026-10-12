@@ -14,6 +14,8 @@ const CATEGORY_EMOJI = {
 };
 
 const THEME_KEY = "mynews:theme";
+// Cards shown per category before a "더보기" button
+const CARDS_PER_CATEGORY = 10;
 
 const BOOKMARK_KEY = "mynews:bookmarks";
 
@@ -86,7 +88,14 @@ function cardHtml(item, bookmarks) {
       <button class="bookmark-btn${marked ? " active" : ""}" data-id="${item.id}" aria-label="즐겨찾기 토글">${marked ? "★" : "☆"}</button>
       <div class="card-body">
         <a href="${escapeHtml(item.link)}" target="_blank" rel="noopener">${escapeHtml(item.title)}</a>
-        <div class="meta">${escapeHtml(item.source)} · ${fmtTime(item.publishedAt)}</div>
+        <div class="meta">
+          ${escapeHtml(item.source)}${item.publisher ? ` · ${escapeHtml(item.publisher)}` : ""} · ${fmtTime(item.publishedAt)}
+          ${
+            item.dupCount
+              ? `<span class="dup-badge" title="${escapeHtml((item.dupSources ?? []).join(", "))}">외 ${item.dupCount}곳</span>`
+              : ""
+          }
+        </div>
         ${item.snippet ? `<div class="snippet">${escapeHtml(item.snippet)}</div>` : ""}
         ${
           item.tags?.length
@@ -100,8 +109,16 @@ function cardHtml(item, bookmarks) {
 
 function renderGrouped(container, items) {
   container._itemsById = new Map(items.map((i) => [i.id, i]));
+  container._hidden = new Map();
   if (!container._bookmarkBound) {
     container.addEventListener("click", (e) => {
+      const more = e.target.closest(".more-btn");
+      if (more) {
+        const rest = container._hidden.get(more.dataset.category) ?? [];
+        more.insertAdjacentHTML("beforebegin", rest.map((i) => cardHtml(i, loadBookmarks())).join(""));
+        more.remove();
+        return;
+      }
       const btn = e.target.closest(".bookmark-btn");
       if (!btn) return;
       const item = container._itemsById.get(btn.dataset.id);
@@ -133,10 +150,18 @@ function renderGrouped(container, items) {
     const heading = document.createElement("h2");
     heading.textContent = `${CATEGORY_EMOJI[category] ?? "📰"} ${category} (${catItems.length})`;
     section.appendChild(heading);
-    section.insertAdjacentHTML(
-      "beforeend",
-      catItems.map((item) => cardHtml(item, bookmarks)).join("")
-    );
+    const shown = catItems.slice(0, CARDS_PER_CATEGORY);
+    const rest = catItems.slice(CARDS_PER_CATEGORY);
+    section.insertAdjacentHTML("beforeend", shown.map((item) => cardHtml(item, bookmarks)).join(""));
+    if (rest.length) {
+      container._hidden.set(category, rest);
+      const more = document.createElement("button");
+      more.type = "button";
+      more.className = "more-btn";
+      more.dataset.category = category;
+      more.textContent = `더보기 (${rest.length}건)`;
+      section.appendChild(more);
+    }
     container.appendChild(section);
   }
 }
@@ -285,6 +310,11 @@ function signalListHtml(items, extra) {
 }
 
 function renderTrend(container, items, hours, trends) {
+  if (!trends) {
+    container.innerHTML =
+      '<p class="empty">트렌드 데이터를 준비 중입니다. 다음 수집(약 2시간 간격) 후에 표시됩니다.</p>';
+    return;
+  }
   const cutoff = Date.now() - hours * 60 * 60 * 1000;
   const inRange = (sourceId) =>
     items.filter((i) => i.sourceId === sourceId && new Date(i.publishedAt).getTime() >= cutoff);
@@ -436,22 +466,32 @@ async function initStatus() {
     return;
   }
 
+  const now = Date.now();
+  const staleDays = (iso) => (iso ? (now - Date.parse(iso)) / 86400000 : Infinity);
   const rows = meta.feeds
-    .map(
-      (f) => `
-        <tr class="${f.ok ? "ok" : "fail"}">
+    .map((f) => {
+      const stale = staleDays(f.newestAt) > 7;
+      const state = !f.ok
+        ? `⚠️ 실패${f.consecutiveFailures > 1 ? ` (${f.consecutiveFailures}회 연속)` : ""}`
+        : stale
+        ? "💤 7일+ 새 글 없음"
+        : "✅ 정상";
+      return `
+        <tr class="${!f.ok ? "fail" : stale ? "stale" : "ok"}">
           <td>${escapeHtml(f.name)}</td>
-          <td>${f.ok ? "✅ 정상" : "⚠️ 실패"}</td>
+          <td>${state}</td>
+          <td>${f.ok ? `${f.recent24h ?? "–"}건` : "–"}</td>
+          <td>${f.newestAt ? fmtTime(f.newestAt) : "–"}</td>
           <td>${f.ok ? `${f.count}건` : escapeHtml(f.error)}</td>
         </tr>
-      `
-    )
+      `;
+    })
     .join("");
 
   container.innerHTML = `
     <p class="trend-summary">마지막 수집: ${fmtTime(meta.lastUpdated)} · 최근 창(latest) ${meta.latestCount ?? 0}건</p>
     <table class="status-table">
-      <thead><tr><th>피드</th><th>상태</th><th>비고</th></tr></thead>
+      <thead><tr><th>피드</th><th>상태</th><th>최근 24시간</th><th>최신 글</th><th>피드 항목 수 / 오류</th></tr></thead>
       <tbody>${rows}</tbody>
     </table>
   `;
@@ -509,18 +549,25 @@ async function main() {
   const items = await fetchJson("data/latest.json");
   items.sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt));
 
-  initExplore(items);
-  initCategory(items);
+  // Syndicated duplicates are folded into their lead story ("외 N곳")
+  const stories = items.filter((item) => !item.dupOf);
+  initExplore(stories);
+  initCategory(stories);
   const trends = await fetch("data/trends.json", { cache: "no-store" })
     .then((res) => (res.ok ? res.json() : null))
     .catch(() => null);
   initTrend(items, trends);
-  initHistory();
+  let historyLoaded = false;
   const refreshBookmark = initBookmark();
   initStatus();
 
   initTabs((tab) => {
     if (tab === "bookmark") refreshBookmark();
+    // The archive month is several MB; only fetch it when History is opened
+    if (tab === "history" && !historyLoaded) {
+      historyLoaded = true;
+      initHistory();
+    }
   });
 }
 

@@ -9,12 +9,13 @@ RSS 뉴스를 2시간마다 수집해 대시보드로 보여주고, 매일 오�
   - 수집 시 기사 제목 키워드를 직전 7일과 비교한 급상승 키워드를 `docs/data/trends.json`에 저장
 - `scripts/search-keywords.mjs` — 구글뉴스 키워드 검색 그룹(예: AI 에이전트·업무 자동화)과 기사 태그 규칙. 여기만 고치면 수집·태깅에 반영
 - `scripts/keywords.mjs` — 제목 키워드 추출·급상승 키워드 계산 (2개 이상 피드에서 언급된 키워드만 인정)
-- `scripts/digest.mjs` — 최근 24시간 뉴스를 카테고리별로 정리해 Discord 웹훅으로 발송 (날씨 제외)
+- `scripts/digest.mjs` — 전날 09:00~당일 09:00(KST) 뉴스를 카테고리별 상위 5건으로 정리해 Discord로 발송 (날씨 제외, 같은 기사는 "외 N곳"으로 묶음, 6000자 넘으면 메시지 분할)
+- `scripts/cluster.mjs` — 여러 매체에 실린 같은 기사(제목 유사도 기준)를 하나로 묶음
 - `scripts/weekly.mjs` — 지난 7일 카테고리 증감·급상승 키워드·구글 인기 검색어·GitHub 트렌딩을 Discord로 발송
 - `docs/` — GitHub Pages로 서비스되는 정적 대시보드 (최신 뉴스 + 히스토리 검색)
-- `.github/workflows/collect.yml` — 2시간마다 수집 후 데이터 커밋/푸시
-- `.github/workflows/digest.yml` — 매일 00:00 UTC(=09:00 KST)에 Discord 요약 발송
-- `.github/workflows/weekly.yml` — 매주 월요일 09:00 KST에 주간 트렌드 리포트 발송
+- `.github/workflows/collect.yml` — 2시간마다(매시 17분) 수집 후, 새 기사가 있을 때만 데이터 커밋/푸시
+- `.github/workflows/digest.yml` — 매일 09:07 KST에 수집을 한 번 더 돌린 뒤 Discord 요약 발송
+- `.github/workflows/weekly.yml` — 매주 월요일 09:07 KST에 주간 트렌드 리포트 발송
 
 ## 로컬 실행
 
@@ -41,3 +42,5 @@ Git 연동되어 있어서, `collect.yml`이 `docs/data`를 커밋·푸시할 �
 ## 피드 추가/변경
 
 `scripts/feeds.mjs`의 `FEEDS` 배열에 `{ id, name, url, category }` 형식으로 추가하면 됩니다.
+선택 항목: `timezone`(시간대 없는 날짜를 보내는 피드, 예: `"+09:00"`), `exclude`(제외할 기사 정규식),
+`titleMustInclude`(제목에 반드시 들어가야 할 단어). 30일보다 오래된 항목은 수집하지 않습니다.

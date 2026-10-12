@@ -2,7 +2,7 @@ name: Send weekly Discord trend report
 
 on:
   schedule:
-    - cron: "0 0 * * 1" # Monday 09:00 KST
+    - cron: "7 0 * * 1" # Monday ~09:07 KST
   workflow_dispatch: {}
 
 jobs:
@@ -17,6 +17,10 @@ jobs:
           cache: "npm"
 
       - run: npm install
+
+      # Fresh data for the window that just closed (not committed here; the
+      # collect workflow owns docs/data)
+      - run: npm run collect
 
       - run: npm run weekly
         env:
