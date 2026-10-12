@@ -4,12 +4,23 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>mynews — RSS 뉴스 대시보드</title>
+  <script>
+    // Apply the saved theme before first paint to avoid a light→dark flash.
+    try {
+      if (localStorage.getItem("mynews:theme") === "dark") {
+        document.documentElement.dataset.theme = "dark";
+      }
+    } catch {}
+  </script>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-    <h1>📰 mynews</h1>
-    <p id="last-updated">불러오는 중…</p>
+    <div>
+      <h1>📰 mynews</h1>
+      <p id="last-updated">불러오는 중…</p>
+    </div>
+    <button type="button" class="theme-toggle" id="theme-toggle" aria-label="테마 전환">🌙 다크</button>
   </header>
   <main>
     <nav class="tabs">
@@ -25,6 +36,7 @@
       <div class="controls">
         <input type="text" id="explore-search" placeholder="제목 검색…" />
         <select id="explore-category"></select>
+        <select id="explore-tag"></select>
       </div>
       <div id="explore-content"></div>
     </section>

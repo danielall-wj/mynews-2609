@@ -6,9 +6,18 @@ const CATEGORY_EMOJI = {
   날씨: "☀️",
   정부지원정책: "🏛️",
   개발: "💻",
+  "검색 트렌드": "🔎",
+  "GitHub 트렌딩": "⭐",
+  "AI 활용": "🛠️",
 };
 
+const THEME_KEY = "mynews:theme";
+
 const BOOKMARK_KEY = "mynews:bookmarks";
+
+function escapeHtml(text) {
+  return String(text).replace(/[&<>"']/g, (c) => `&#${c.charCodeAt(0)};`);
+}
 
 function fmtTime(iso) {
   try {
@@ -77,6 +86,11 @@ function cardHtml(item, bookmarks) {
         <a href="${item.link}" target="_blank" rel="noopener">${item.title}</a>
         <div class="meta">${item.source} · ${fmtTime(item.publishedAt)}</div>
         ${item.snippet ? `<div class="snippet">${item.snippet}</div>` : ""}
+        ${
+          item.tags?.length
+            ? `<div class="tags">${item.tags.map((t) => `<span class="tag">#${escapeHtml(t)}</span>`).join("")}</div>`
+            : ""
+        }
       </div>
     </div>
   `;
@@ -135,22 +149,27 @@ function initExplore(items) {
   const searchInput = document.getElementById("explore-search");
   const categorySelect = document.getElementById("explore-category");
   populateSelect(categorySelect, uniqueCategories(items), "전체 카테고리");
+  const tagSelect = document.getElementById("explore-tag");
+  populateSelect(tagSelect, [...new Set(items.flatMap((i) => i.tags ?? []))].sort(), "전체 태그");
 
   const container = document.getElementById("explore-content");
 
   function apply() {
     const q = searchInput.value.trim().toLowerCase();
     const cat = categorySelect.value;
+    const tag = tagSelect.value;
     const filtered = items.filter((item) => {
       const matchesQ = !q || item.title.toLowerCase().includes(q);
       const matchesCat = !cat || item.category === cat;
-      return matchesQ && matchesCat;
+      const matchesTag = !tag || item.tags?.includes(tag);
+      return matchesQ && matchesCat && matchesTag;
     });
     renderGrouped(container, filtered);
   }
 
   searchInput.addEventListener("input", apply);
   categorySelect.addEventListener("change", apply);
+  tagSelect.addEventListener("change", apply);
   apply();
 }
 
@@ -224,15 +243,88 @@ function trendBarHtml(label, count, max) {
   `;
 }
 
-function renderTrend(container, items, hours) {
+function risingHtml(rising, baselineHours) {
+  if (!rising?.length) {
+    return '<p class="empty">평소보다 눈에 띄게 늘어난 키워드가 없습니다.</p>';
+  }
+  const chips = rising
+    .map((r) => {
+      const hint = r.isNew
+        ? "신규"
+        : `평소 ${r.expected}회 → ×${((r.count + 1) / (r.expected + 1)).toFixed(1)}`;
+      return `
+        <span class="keyword-chip" title="${escapeHtml(`평소 기대치 ${r.expected}회`)}">
+          ${escapeHtml(r.keyword)} <b>${r.count}</b>
+          <small${r.isNew ? ' class="new"' : ""}>${escapeHtml(hint)}</small>
+        </span>`;
+    })
+    .join("");
+  return `
+    <div class="keyword-chips">${chips}</div>
+    <p class="trend-note">기사 제목 키워드 언급 수를 직전 ${baselineHours / 24}일 평균과 비교했습니다.</p>
+  `;
+}
+
+function signalListHtml(items, extra) {
+  if (items.length === 0) return '<p class="empty">해당 기간에 수집된 항목이 없습니다.</p>';
+  return `
+    <ol class="signal-list">
+      ${items
+        .map(
+          (i) => `
+        <li>
+          <a href="${escapeHtml(i.link)}" target="_blank" rel="noopener">${escapeHtml(i.title)}</a>
+          ${extra(i) ? `<span class="signal-extra">${escapeHtml(extra(i))}</span>` : ""}
+        </li>`
+        )
+        .join("")}
+    </ol>
+  `;
+}
+
+function renderTrend(container, items, hours, trends) {
+  const cutoff = Date.now() - hours * 60 * 60 * 1000;
+  const inRange = (sourceId) =>
+    items.filter((i) => i.sourceId === sourceId && new Date(i.publishedAt).getTime() >= cutoff);
+  const searches = inRange("google-trends").sort((a, b) => (b.traffic ?? 0) - (a.traffic ?? 0));
+  const repos = inRange("github-trending");
+
+  const signalsHtml = `
+    <h2>📈 급상승 키워드</h2>
+    ${risingHtml(trends?.windows?.[hours], trends?.baselineHours ?? 168)}
+    <h2>🧩 AI 연관 키워드 <small class="trend-note-inline">검색어 후보</small></h2>
+    ${
+      trends?.related?.keywords?.length
+        ? `<div class="keyword-chips">${trends.related.keywords
+            .map(
+              (r) =>
+                `<span class="keyword-chip">${escapeHtml(r.keyword)} <b>${r.count}</b>${r.isNew ? ' <small class="new">신규</small>' : ""}</span>`
+            )
+            .join("")}</div>
+          <p class="trend-note">최근 ${trends.related.windowHours / 24}일 AI 기사에서 급상승했지만 아직 검색어·태그에 없는 키워드입니다. 수집하려면 <code>scripts/search-keywords.mjs</code>에 추가하세요.</p>`
+        : '<p class="empty">새로 떠오른 연관 키워드가 없습니다.</p>'
+    }
+    <div class="signal-grid">
+      <div>
+        <h2>🔎 구글 인기 검색어</h2>
+        ${signalListHtml(searches.slice(0, 15), (i) => (i.traffic ? `${i.traffic.toLocaleString()}+` : ""))}
+      </div>
+      <div>
+        <h2>⭐ GitHub 트렌딩</h2>
+        ${signalListHtml(repos.slice(0, 15), (i) => i.snippet?.slice(0, 80) ?? "")}
+      </div>
+    </div>
+  `;
+
   const { total, byCategory, bySource } = computeTrend(items, hours);
   if (total === 0) {
-    container.innerHTML = '<p class="empty">해당 기간에 수집된 뉴스가 없습니다.</p>';
+    container.innerHTML = signalsHtml + '<p class="empty">해당 기간에 수집된 뉴스가 없습니다.</p>';
     return;
   }
   const maxCat = Math.max(...byCategory.map(([, n]) => n));
   const maxSrc = Math.max(...bySource.map(([, n]) => n));
   container.innerHTML = `
+    ${signalsHtml}
     <p class="trend-summary">해당 기간 총 ${total}건 수집됨</p>
     <h2>카테고리별 발행량</h2>
     <div class="trend-list">
@@ -245,7 +337,7 @@ function renderTrend(container, items, hours) {
   `;
 }
 
-function initTrend(items) {
+function initTrend(items, trends) {
   const subtabsNav = document.getElementById("trend-subtabs");
   const container = document.getElementById("trend-content");
 
@@ -253,11 +345,11 @@ function initTrend(items) {
     btn.addEventListener("click", () => {
       subtabsNav.querySelectorAll("button").forEach((b) => b.classList.remove("active"));
       btn.classList.add("active");
-      renderTrend(container, items, Number(btn.dataset.range));
+      renderTrend(container, items, Number(btn.dataset.range), trends);
     });
   });
 
-  renderTrend(container, items, 24);
+  renderTrend(container, items, 24, trends);
 }
 
 async function initHistory() {
@@ -385,7 +477,28 @@ function initTabs(onShow) {
   });
 }
 
+function initTheme() {
+  const button = document.getElementById("theme-toggle");
+  const render = () => {
+    const dark = document.documentElement.dataset.theme === "dark";
+    button.textContent = dark ? "☀️ 라이트" : "🌙 다크";
+  };
+  button.addEventListener("click", () => {
+    const dark = document.documentElement.dataset.theme !== "dark";
+    if (dark) document.documentElement.dataset.theme = "dark";
+    else delete document.documentElement.dataset.theme;
+    try {
+      localStorage.setItem(THEME_KEY, dark ? "dark" : "light");
+    } catch {
+      // localStorage unavailable — the toggle still works for this visit
+    }
+    render();
+  });
+  render();
+}
+
 async function main() {
+  initTheme();
   const meta = await fetchJson("data/meta.json");
   document.getElementById("last-updated").textContent = meta.lastUpdated
     ? `마지막 수집: ${fmtTime(meta.lastUpdated)} (${meta.latestCount ?? 0}건)`
@@ -396,7 +509,10 @@ async function main() {
 
   initExplore(items);
   initCategory(items);
-  initTrend(items);
+  const trends = await fetch("data/trends.json", { cache: "no-store" })
+    .then((res) => (res.ok ? res.json() : null))
+    .catch(() => null);
+  initTrend(items, trends);
   initHistory();
   const refreshBookmark = initBookmark();
   initStatus();

@@ -1,10 +1,33 @@
 :root {
+  color-scheme: light;
+  --bg: #f6f7f9;
+  --panel: #ffffff;
+  --border: #e1e4ea;
+  --text: #1c1f24;
+  --muted: #5f6673;
+  --accent: #4752c4;
+  --on-accent: #ffffff;
+  --on-accent-muted: rgba(255, 255, 255, 0.8);
+  --star: #c98a00;
+  --highlight: #b26a00;
+  --danger: #d02f2f;
+  --tag-bg: #eef0fb;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
   --bg: #0f1115;
   --panel: #171a21;
   --border: #262b36;
   --text: #e6e8ec;
   --muted: #8b93a3;
   --accent: #5865f2;
+  --on-accent: #ffffff;
+  --on-accent-muted: rgba(255, 255, 255, 0.75);
+  --star: #f5b301;
+  --highlight: #f0b232;
+  --danger: #f87171;
+  --tag-bg: #232842;
 }
 
 * {
@@ -23,6 +46,25 @@ header {
   max-width: 1000px;
   margin: 0 auto;
   padding: 32px 0 16px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.theme-toggle {
+  flex-shrink: 0;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  border-color: var(--accent);
 }
 
 header h1 {
@@ -73,11 +115,11 @@ nav.tabs button .num {
 
 nav.tabs button.active {
   background: var(--accent);
-  color: #fff;
+  color: var(--on-accent);
 }
 
 nav.tabs button.active .num {
-  color: rgba(255, 255, 255, 0.75);
+  color: var(--on-accent-muted);
 }
 
 nav.subtabs {
@@ -169,7 +211,7 @@ nav.subtabs button.active {
 }
 
 .bookmark-btn.active {
-  color: #f5b301;
+  color: var(--star);
 }
 
 .card a {
@@ -253,6 +295,81 @@ nav.subtabs button.active {
   color: var(--muted);
 }
 
+.trend-note {
+  color: var(--muted);
+  font-size: 12px;
+  margin: 8px 0 28px;
+}
+
+.keyword-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.keyword-chip {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 13px;
+}
+
+.keyword-chip b {
+  color: var(--accent);
+}
+
+.keyword-chip small {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.keyword-chip small.new {
+  color: var(--highlight);
+}
+
+.signal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-bottom: 28px;
+}
+
+.signal-grid > div {
+  min-width: 0;
+}
+
+.signal-list {
+  margin: 0;
+  padding-left: 22px;
+  font-size: 13px;
+}
+
+.signal-list li {
+  margin-bottom: 8px;
+}
+
+.signal-list a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.signal-list a:hover {
+  text-decoration: underline;
+}
+
+.signal-extra {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 .status-table {
   width: 100%;
   border-collapse: collapse;
@@ -272,7 +389,7 @@ nav.subtabs button.active {
 }
 
 .status-table tr.fail td {
-  color: #f87171;
+  color: var(--danger);
 }
 
 footer {
@@ -280,4 +397,31 @@ footer {
   margin: 32px auto 0;
   color: var(--muted);
   font-size: 12px;
+}
+
+.card .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-top: 6px;
+}
+
+.tag {
+  background: var(--tag-bg);
+  color: var(--accent);
+  border-radius: 999px;
+  padding: 2px 8px;
+  font-size: 11px;
+}
+
+.trend-note-inline {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.trend-note code {
+  background: var(--tag-bg);
+  border-radius: 4px;
+  padding: 1px 5px;
 }

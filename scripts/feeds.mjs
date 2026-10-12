@@ -1,3 +1,5 @@
+import { SEARCH_GROUPS, searchGroupUrl } from "./search-keywords.mjs";
+
 export const FEEDS = [
   {
     id: "aitimes",
@@ -78,4 +80,28 @@ export const FEEDS = [
     url: "https://news.hada.io/rss/news",
     category: "개발",
   },
+  // Daily trending searches in Korea. Every item's <link> is the same feed
+  // URL, so collect.mjs rewrites it per search term (kind: "google-trends").
+  {
+    id: "google-trends",
+    name: "구글 트렌드 인기 검색어",
+    url: "https://trends.google.com/trending/rss?geo=KR",
+    category: "검색 트렌드",
+    kind: "google-trends",
+  },
+  // GitHub has no official trending feed; this community mirror regenerates
+  // the daily trending page as RSS.
+  {
+    id: "github-trending",
+    name: "GitHub Trending",
+    url: "https://mshibanami.github.io/GitHubTrendingRSS/daily/all.xml",
+    category: "GitHub 트렌딩",
+  },
+  // Keyword searches, one Google News feed per group in search-keywords.mjs
+  ...SEARCH_GROUPS.map((group) => ({
+    id: group.id,
+    name: group.name,
+    url: searchGroupUrl(group),
+    category: group.category,
+  })),
 ];

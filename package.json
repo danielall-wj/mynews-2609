@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "collect": "node scripts/collect.mjs",
-    "digest": "node scripts/digest.mjs"
+    "digest": "node scripts/digest.mjs",
+    "weekly": "node scripts/weekly.mjs"
   },
   "dependencies": {
     "rss-parser": "^3.13.0"

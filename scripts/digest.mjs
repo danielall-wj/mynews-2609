@@ -1,24 +1,15 @@
 import { readFile } from "node:fs/promises";
 import path from "node:path";
+import {
+  EXCLUDED_CATEGORIES,
+  categoryLabel,
+  escapeMarkdownTitle,
+  sendToDiscord,
+} from "./discord.mjs";
 
 const LATEST_PATH = path.join(process.cwd(), "docs", "data", "latest.json");
-const WEBHOOK_URL = process.env.DISCORD_WEBHOOK_URL;
 const WINDOW_HOURS = 24;
 const MAX_ITEMS_PER_CATEGORY = 8;
-
-const CATEGORY_EMOJI = {
-  AI: "🤖",
-  경제: "💵",
-  창업: "🚀",
-  "크리에이터 이코노미": "🎬",
-  날씨: "☀️",
-  정부지원정책: "🏛️",
-  개발: "💻",
-};
-
-function escapeMarkdownTitle(title) {
-  return title.replace(/[\[\]]/g, "").slice(0, 140);
-}
 
 async function readLatest() {
   try {
@@ -48,7 +39,7 @@ function buildEmbeds(items) {
     if (extra > 0) lines.push(`…외 ${extra}건`);
 
     embeds.push({
-      title: `${CATEGORY_EMOJI[category] ?? "📰"} ${category} (${categoryItems.length}건)`,
+      title: `${categoryLabel(category)} (${categoryItems.length}건)`,
       description: lines.join("\n").slice(0, 4000),
       color: 0x5865f2,
     });
@@ -56,25 +47,14 @@ function buildEmbeds(items) {
   return embeds;
 }
 
-async function sendToDiscord(payload) {
-  const res = await fetch(WEBHOOK_URL, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(payload),
-  });
-  if (!res.ok) {
-    throw new Error(`Discord webhook failed: ${res.status} ${await res.text()}`);
-  }
-}
-
 async function main() {
-  if (!WEBHOOK_URL) {
-    throw new Error("DISCORD_WEBHOOK_URL is not set");
-  }
-
   const all = await readLatest();
   const cutoff = Date.now() - WINDOW_HOURS * 60 * 60 * 1000;
-  const recent = all.filter((item) => new Date(item.publishedAt).getTime() >= cutoff);
+  const recent = all.filter(
+    (item) =>
+      !EXCLUDED_CATEGORIES.has(item.category) &&
+      new Date(item.publishedAt).getTime() >= cutoff
+  );
 
   const today = new Date().toLocaleDateString("ko-KR", { timeZone: "Asia/Seoul" });
 
