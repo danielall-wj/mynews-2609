@@ -1,5 +1,485 @@
 [
   {
+    "id": "3d3e1a6b1e6ff843",
+    "title": "[AI리더의 서가] 핸즈온 머신러닝 with 사이킷런. 파이토치",
+    "link": "https://www.aitimes.com/news/articleView.html?idxno=216139",
+    "source": "AI타임스",
+    "sourceId": "aitimes",
+    "category": "AI",
+    "publishedAt": "2026-10-12T09:03:08.000Z",
+    "snippet": "핸즈온 머신러닝 with 사이킷런. 파이토치오렐리앙 제롱 | 한빛미디어2026년 9월 28일추천이유저자는 머신러닝의 기본 원리부터 트랜스포머, LLM, 멀티모달까지 실제 코드로 직접 구현하며 현대 AI 기술의 흐름을 이해하도록 안내합니다. 기초 개념과 최신 기술을 체계적으로 연결하여 AI를 단순히 사용하는 것을 넘어 원리를 깊이 있게 학습할 수 있습니다.상세보기영풍문고 개발서 서가에서 '핸즈온 머신러닝'은 판이 바뀔 때마다 다"
+  },
+  {
+    "id": "893d7c5fe8bd8fa7",
+    "title": "이제 우리는 모두 제품 엔지니어다",
+    "link": "https://news.hada.io/topic?id=35212",
+    "source": "긱뉴스(GeekNews)",
+    "sourceId": "geeknews",
+    "category": "개발",
+    "publishedAt": "2026-10-12T00:45:02.000Z",
+    "snippet": "AI가 개발 생명주기 전체를 자동화한다면, 소프트웨어 개발의 중심은 고객 요구 파악, 좋은 결과 정의, 즐거운 사용 경험 설계로 옮겨갈 것 이 전망은 개발 생명주기 전반의 자동화와 사실상 상한이 없는 소프트웨어 수요를 가정함. 코드 검토와 ..."
+  },
+  {
+    "id": "a663749e74044e24",
+    "title": "컨텍스트가 새로운 코드다",
+    "link": "https://news.hada.io/topic?id=35211",
+    "source": "긱뉴스(GeekNews)",
+    "sourceId": "geeknews",
+    "category": "개발",
+    "publishedAt": "2026-10-12T00:35:02.000Z",
+    "snippet": "AI 에이전트에 제공하는 컨텍스트를 코드처럼 관리하고, 생성 → 평가 → 배포 → 관찰의 수명주기를 적용해야 함 컨텍스트 품질은 문법 검사만으로 판단할 수 없으며, 실제 코드베이스에서의 작업 수행 평가와 변경 전후 비교가 필요함 컨텍스트도"
+  },
+  {
+    "id": "03070453d24624b7",
+    "title": "하루 160장 웹캠 촬영을 거부한 원격근무 직원, 회사는 그녀를 해고했다",
+    "link": "https://news.hada.io/topic?id=35210",
+    "source": "긱뉴스(GeekNews)",
+    "sourceId": "geeknews",
+    "category": "개발",
+    "publishedAt": "2026-10-12T00:32:10.000Z",
+    "snippet": "뉴저지에서 제기된 소송에 따르면, Sutherland Healthcare Solutions는 웹캠 감시에 동의하지 않은 장기 근속 원격근무 직원을 해고함 회사가 도입을 통보한 Sentinel AI는 약 3분마다 웹캠으로 직원을 촬영해 하루 약 160장의 사진을 찍는 도구임 직원은..."
+  },
+  {
+    "id": "4483f14582888a10",
+    "title": "jevgrep - 코드의 동작을 질문해 관련 파일을 찾는 코딩 에이전트용 CLI",
+    "link": "https://news.hada.io/topic?id=35208",
+    "source": "긱뉴스(GeekNews)",
+    "sourceId": "geeknews",
+    "category": "개발",
+    "publishedAt": "2026-10-12T00:30:03.000Z",
+    "snippet": "낯선 코드베이스에서 코딩 에이전트가 필요한 파일과 소스를 찾도록 돕는 검색 도구 \"인증을 어디서 검사해?\", \"재시도 동작을 검증하는 테스트는?\" 처럼 동작을 질문하면 관련 파일과 원문 코드 발췌를 반환"
+  },
+  {
+    "id": "57923e661259cfd6",
+    "title": "사티아 나델라: 초지능 시대, 모델도 내부자처럼 위험으로 다뤄야 한다",
+    "link": "https://news.hada.io/topic?id=35207",
+    "source": "긱뉴스(GeekNews)",
+    "sourceId": "geeknews",
+    "category": "개발",
+    "publishedAt": "2026-10-12T00:24:19.000Z",
+    "snippet": "민감한 데이터에 접근하고 핵심 업무를 수행하는 초지능 모델을 내부자 위험으로 취급해야 함. 악의가 있어서가 아니라, 중요한 시스템에 접근하는 유능한 행위자는 실수하거나 침해당할 수 있기 때문임 모델의 행동을 특정 학습 데이터나 가중치 구성으로 추적하기 어려운 상황에서..."
+  },
+  {
+    "id": "ceaa15df85dddd7f",
+    "title": "GitHub의 문제점",
+    "link": "https://news.hada.io/topic?id=35206",
+    "source": "긱뉴스(GeekNews)",
+    "sourceId": "geeknews",
+    "category": "개발",
+    "publishedAt": "2026-10-12T00:20:32.000Z",
+    "snippet": "GNU Project는 GitHub 저장소 호스팅을 피할 것을 권고함. 불명확한 라이선스 안내, 비자유 JavaScript 요구, 사용자가 통제할 수 없는 원격 서비스, Git의 중앙집중화를 주요 이유로 듦 GPL 적용 안내가 불충분함. 라이선스 전문을 저장소에 넣는 것만으로 충분하..."
+  },
+  {
+    "id": "0d2208d46a5d53c4",
+    "title": "여전히 여기 있지만… 이곳에 글을 쓰지 않을 뿐인 나",
+    "link": "https://news.hada.io/topic?id=35205",
+    "source": "긱뉴스(GeekNews)",
+    "sourceId": "geeknews",
+    "category": "개발",
+    "publishedAt": "2026-10-12T00:17:32.000Z",
+    "snippet": "여전히 여기 있지만… 이곳에 글을 쓰지 않을 뿐인 나"
+  },
+  {
+    "id": "003a32599cde00f0",
+    "title": "정답은 딱 ‘4글자’…카카오뱅크 AI 이모지 퀴즈 정답 (10월 12일) - 위키트리",
+    "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE9nVXdpdzZjS0lmUnVyR0F0N1FwS0dqWnhCbWdUZnZ3WDhfMUkyYTRXX2lrVjhoNDhqbmQwRm82djJ4ekd4T2EycWV5bl9KOHpSb1ZlcGp3?oc=5",
+    "source": "날씨 뉴스",
+    "sourceId": "weather-news",
+    "category": "날씨",
+    "publishedAt": "2026-10-12T00:17:00.000Z",
+    "snippet": "정답은 딱 ‘4글자’…카카오뱅크 AI 이모지 퀴즈 정답 (10월 12일) 위키트리"
+  },
+  {
+    "id": "fdaf29ccd4677de3",
+    "title": "[단독] “20년 살았는데 내집 해줘”…장기전세 갈등, 은평·마포·구로 차례온다",
+    "link": "https://www.mk.co.kr/news/economy/12173277",
+    "source": "매일경제 경제",
+    "sourceId": "mk-economy",
+    "category": "경제",
+    "publishedAt": "2026-10-12T00:11:43.000Z",
+    "snippet": "강동구 이어 곳곳서 ‘만기갈등’ 예고 2030년 은평·마포·중랑 2212가구 2031년 강동·구로·양천 2923가구 “전월세 시장 연착륙대책 마련해야”서울 강동구에서 불거진 장기전.."
+  },
+  {
+    "id": "c26ac06643179d8d",
+    "title": "“웬만한 의사보다 똑똑해 보인다고?”…아무 문제 없다는 AI의료기 괜찮나",
+    "link": "https://www.mk.co.kr/news/economy/12173276",
+    "source": "매일경제 경제",
+    "sourceId": "mk-economy",
+    "category": "경제",
+    "publishedAt": "2026-10-12T00:10:03.000Z",
+    "snippet": "AI 의료기 허가·인증 매년 늘지만 3년 간 이상사례 보고 전무한 상태 “SW 오류 잡아낼 체계 없을 수도”질병 진단과 영상 판독 등을 돕는 인공지능(AI) 의료기기가 빠르게 늘고.."
+  },
+  {
+    "id": "c24fb90e189a6f3a",
+    "title": "[속보] 10월 1~10일 수출 261억달러 102%↑…역대 최대",
+    "link": "https://www.hankyung.com/article/2026101252227",
+    "source": "한국경제",
+    "sourceId": "hankyung-economy",
+    "category": "경제",
+    "publishedAt": "2026-10-12T00:02:59.000Z",
+    "snippet": ""
+  },
+  {
+    "id": "49e3c9b72e3c85cd",
+    "title": "평당 514만원이라니…호남 반도체 산단 '땅값'부터 비상",
+    "link": "https://www.hankyung.com/article/202610125165H",
+    "source": "한국경제",
+    "sourceId": "hankyung-economy",
+    "category": "경제",
+    "publishedAt": "2026-10-12T00:01:08.000Z",
+    "snippet": ""
+  },
+  {
+    "id": "99b63a9efb26465e",
+    "title": "“내가 피우는 담배엔 뭐가?”…정부, 이달 유해성분 첫 공개",
+    "link": "https://www.hankyung.com/article/202610103349i",
+    "source": "한국경제",
+    "sourceId": "hankyung-economy",
+    "category": "경제",
+    "publishedAt": "2026-10-12T00:01:01.000Z",
+    "snippet": ""
+  },
+  {
+    "id": "2a5151f6addf8065",
+    "title": "미국 소비심리 46.3으로 하락…역대 두 번째 최저 수준 근접",
+    "link": "https://www.hankyung.com/article/202610125170i",
+    "source": "한국경제",
+    "sourceId": "hankyung-economy",
+    "category": "경제",
+    "publishedAt": "2026-10-12T00:00:19.000Z",
+    "snippet": ""
+  },
+  {
+    "id": "f799a8fa3ae33b9b",
+    "title": "수입하던 日맥주 이젠 \"메이드 인 코리아\"…하이트진로 나섰다",
+    "link": "https://www.hankyung.com/article/202610124727g",
+    "source": "한국경제",
+    "sourceId": "hankyung-economy",
+    "category": "경제",
+    "publishedAt": "2026-10-12T00:00:01.000Z",
+    "snippet": ""
+  },
+  {
+    "id": "08f29dc19522a358",
+    "title": "\"골목상권 디지털로 살린다\"…롯데온 상생 프로젝트 빛났다",
+    "link": "https://www.hankyung.com/article/202610124925g",
+    "source": "한국경제",
+    "sourceId": "hankyung-economy",
+    "category": "경제",
+    "publishedAt": "2026-10-11T23:54:30.000Z",
+    "snippet": ""
+  },
+  {
+    "id": "46a0ef3328292da8",
+    "title": "'돈 있어도 못 구해'…AI 열풍에 GPU 임대료 60% '껑충'",
+    "link": "https://www.hankyung.com/article/202610125140i",
+    "source": "한국경제",
+    "sourceId": "hankyung-economy",
+    "category": "경제",
+    "publishedAt": "2026-10-11T23:51:21.000Z",
+    "snippet": ""
+  },
+  {
+    "id": "a35934e33a03fa02",
+    "title": "발암물질 모자 이름 바꿔 다시 팔았다…직구족 비상",
+    "link": "https://www.hankyung.com/article/202610124996g",
+    "source": "한국경제",
+    "sourceId": "hankyung-economy",
+    "category": "경제",
+    "publishedAt": "2026-10-11T23:45:20.000Z",
+    "snippet": ""
+  },
+  {
+    "id": "9124e01db13d980f",
+    "title": "\"청년에 2년간 월 300만원 쏜다\"…최태원표 '파격 지원'",
+    "link": "https://www.hankyung.com/article/2026101251237",
+    "source": "한국경제",
+    "sourceId": "hankyung-economy",
+    "category": "경제",
+    "publishedAt": "2026-10-11T23:45:11.000Z",
+    "snippet": ""
+  },
+  {
+    "id": "32c49ef2c47c9da3",
+    "title": "25년 만의 고금리에 신용위험까지…美 경기 침체 확률 50%",
+    "link": "https://www.hankyung.com/article/202610125098i",
+    "source": "한국경제",
+    "sourceId": "hankyung-economy",
+    "category": "경제",
+    "publishedAt": "2026-10-11T23:41:11.000Z",
+    "snippet": ""
+  },
+  {
+    "id": "386cb73561946219",
+    "title": "패스키는 함정이다. 사용하지 말라",
+    "link": "https://news.hada.io/topic?id=35204",
+    "source": "긱뉴스(GeekNews)",
+    "sourceId": "geeknews",
+    "category": "개발",
+    "publishedAt": "2026-10-11T23:39:40.000Z",
+    "snippet": "패스키는 보안성과 편의성을 높일 수 있지만, 서비스가 허용할 인증 방식과 소프트웨어를 제한해 사용자 통제권을 줄일 수 있음 같은 패스키라는 이름 아래 복사, 이전, 하드웨어 보호, 사용자 확인 여부가 다른 인증 수단이 묶여 있어, 사용자가 자신이 만든 자격..."
+  },
+  {
+    "id": "38fe7a4605dcf1ea",
+    "title": "Show GN: 알림지기 - 광고 알림을 걸러주고 중요한 연락은 놓치지 않게 해주는 앱",
+    "link": "https://news.hada.io/topic?id=35203",
+    "source": "긱뉴스(GeekNews)",
+    "sourceId": "geeknews",
+    "category": "개발",
+    "publishedAt": "2026-10-11T23:37:02.000Z",
+    "snippet": "앱 알림을 전부 끄자니 필요한 알림까지 막히고 다 켜두자니 광고나 안내 알림 사이에 중요한 메시지가 묻히더라구요... 엄마랑 여자친구 핸드폰을 보니 저만 겪는 문제는 아니더라구요. 카카오페이만 몇십개.. 쿠팡에 테무에.. 은행 상품광고에.. 어휴.. 그래서 핸드폰이 너무 자주 울린다고 무음으로 해..."
+  },
+  {
+    "id": "8430956e8e298fba",
+    "title": "LLM의 능력에 대한 인식 격차가 커지고 있다",
+    "link": "https://news.hada.io/topic?id=35202",
+    "source": "긱뉴스(GeekNews)",
+    "sourceId": "geeknews",
+    "category": "개발",
+    "publishedAt": "2026-10-11T23:36:40.000Z",
+    "snippet": "LLM을 어설픈 챗봇으로 경험하는 대중과 대규모 작업을 맡기는 전문 사용자 사이에서 능력에 대한 인식 격차가 커지고 있으며, 활용 분야와 시스템 접근 수준에 따라 경험이 크게 달라짐 Karpathy의 대략적 추산으로 약 60억 명은 LLM을 거의 접하지 않았고, 약 10..."
+  },
+  {
+    "id": "872bc4f7a80b62fa",
+    "title": "美 9월 물가 발표 임박…연준 연말 금리 경로 주목",
+    "link": "https://www.hankyung.com/article/202610125083i",
+    "source": "한국경제",
+    "sourceId": "hankyung-economy",
+    "category": "경제",
+    "publishedAt": "2026-10-11T23:35:49.000Z",
+    "snippet": ""
+  },
+  {
+    "id": "eeb3f5fa2639f089",
+    "title": "중국 재정 발목 잡은 빚 이자…내수 부양책도 한계",
+    "link": "https://www.hankyung.com/article/202610125062i",
+    "source": "한국경제",
+    "sourceId": "hankyung-economy",
+    "category": "경제",
+    "publishedAt": "2026-10-11T23:29:44.000Z",
+    "snippet": ""
+  },
+  {
+    "id": "0448ec6e656f2ff7",
+    "title": "한은 인수 위조지폐 4억7천만원…SNS선 “24시간 영업 중”",
+    "link": "https://www.mk.co.kr/news/economy/12173257",
+    "source": "매일경제 경제",
+    "sourceId": "mk-economy",
+    "category": "경제",
+    "publishedAt": "2026-10-11T23:27:00.000Z",
+    "snippet": "작년 한은 인수 위조지폐 9716장지난해 한국은행이 수사기관에서 넘겨받은 위·변조지폐 금액이 4억7664만5000원으로 2024년(463만원)의 100배를 웃도는 것으로 나타났다..."
+  },
+  {
+    "id": "de1a3d22190c784d",
+    "title": "\"편의점 음식 자주 먹었는데\"…CU·GS25·세븐일레븐 줄줄이 걸렸다",
+    "link": "https://www.hankyung.com/article/2026101250387",
+    "source": "한국경제",
+    "sourceId": "hankyung-economy",
+    "category": "경제",
+    "publishedAt": "2026-10-11T23:26:22.000Z",
+    "snippet": ""
+  },
+  {
+    "id": "64920c6dad3078b6",
+    "title": "달러 패권 흔드는 중국…위안화 국제화 승부수 띄웠다 [차이나 워치]",
+    "link": "https://www.hankyung.com/article/202610092768i",
+    "source": "한국경제",
+    "sourceId": "hankyung-economy",
+    "category": "경제",
+    "publishedAt": "2026-10-11T23:22:01.000Z",
+    "snippet": ""
+  },
+  {
+    "id": "ed46b0d362aadec4",
+    "title": "반복되는 '짬짜미' 담합, 이유 있었다…\"과징금, 매출의 6% 미만\"",
+    "link": "https://www.hankyung.com/article/202610124959g",
+    "source": "한국경제",
+    "sourceId": "hankyung-economy",
+    "category": "경제",
+    "publishedAt": "2026-10-11T23:15:26.000Z",
+    "snippet": ""
+  },
+  {
+    "id": "a9181363434b96d6",
+    "title": "[오늘 전국 날씨예보] 기상청 날씨누리, “12일, 오늘 밤~내일 전국 가끔 비, 내일 오후부터 기온 낮아져” - 한국강사신문",
+    "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTFBKVDFFc1BWLVF1aS0wVFVXaTQwTTVobjFpRTdPOVpyY2lWc3FVUWZCSll5QndoN3hhUTdNT1A3OUZjZ0NoWGs0X19sME5VZVhvcU1RcHMteHRBT0FlMnVKd0MxLWVBa0Z2MlM3Q1FHRzg?oc=5",
+    "source": "날씨 뉴스",
+    "sourceId": "weather-news",
+    "category": "날씨",
+    "publishedAt": "2026-10-11T23:12:25.000Z",
+    "snippet": "[오늘 전국 날씨예보] 기상청 날씨누리, “12일, 오늘 밤~내일 전국 가끔 비, 내일 오후부터 기온 낮아져” 한국강사신문"
+  },
+  {
+    "id": "297b7498a9d4d6c7",
+    "title": "[밤 사이 해외뉴스 영상] Fed 독립성 흔드는 트럼프, Fed 이사 해임 청문회 소집 파장",
+    "link": "https://www.hankyung.com/article/202610124984i",
+    "source": "한국경제",
+    "sourceId": "hankyung-economy",
+    "category": "경제",
+    "publishedAt": "2026-10-11T23:09:33.000Z",
+    "snippet": ""
+  },
+  {
+    "id": "4d51748ef65c4c2e",
+    "title": "Show GN: PartsPlan - AI가 제조사 데이터시트의 쪽을 근거로 답하게 하는 MCP 서버",
+    "link": "https://news.hada.io/topic?id=35201",
+    "source": "긱뉴스(GeekNews)",
+    "sourceId": "geeknews",
+    "category": "개발",
+    "publishedAt": "2026-10-11T23:06:43.000Z",
+    "snippet": "전자부품 설계 값(열저항, 절대 최대 정격, 그래프에만 있는 특성 값)은 수십~수백 쪽 데이터시트 안쪽 표와 그래프에 있습니다. PartsPlan은 Claude·ChatGPT·Cursor 같은 AI에 연결하는 MCP 서버입니다."
+  },
+  {
+    "id": "13e6884c3e4efda3",
+    "title": "[밤 사이 해외뉴스] 경유값 급등에 푸틴과 손잡은 트럼프…에너지 시장 요동친다",
+    "link": "https://www.hankyung.com/article/202610124924i",
+    "source": "한국경제",
+    "sourceId": "hankyung-economy",
+    "category": "경제",
+    "publishedAt": "2026-10-11T23:05:28.000Z",
+    "snippet": ""
+  },
+  {
+    "id": "b68ad8bb470106da",
+    "title": "분명히 월급서 꼬박꼬박 떼갔는데…'내 국민연금 ㅜㅜ' 날벼락",
+    "link": "https://www.hankyung.com/article/2026101249307",
+    "source": "한국경제",
+    "sourceId": "hankyung-economy",
+    "category": "경제",
+    "publishedAt": "2026-10-11T23:05:01.000Z",
+    "snippet": ""
+  },
+  {
+    "id": "b5249b72d9f42d5a",
+    "title": "LNG보다 80% 싼 석탄…아시아 연말 수출 반등 전망",
+    "link": "https://www.hankyung.com/article/202610124911i",
+    "source": "한국경제",
+    "sourceId": "hankyung-economy",
+    "category": "경제",
+    "publishedAt": "2026-10-11T22:51:43.000Z",
+    "snippet": ""
+  },
+  {
+    "id": "74e8326793011fe7",
+    "title": "\"왜 냉장고에 쟁여두나요\"…1·2인 가구 마트 대신 찾는 곳",
+    "link": "https://www.hankyung.com/article/202610124870g",
+    "source": "한국경제",
+    "sourceId": "hankyung-economy",
+    "category": "경제",
+    "publishedAt": "2026-10-11T22:48:35.000Z",
+    "snippet": ""
+  },
+  {
+    "id": "10eee8e69e610d75",
+    "title": "북한의 지도 제작자",
+    "link": "https://news.hada.io/topic?id=35199",
+    "source": "긱뉴스(GeekNews)",
+    "sourceId": "geeknews",
+    "category": "개발",
+    "publishedAt": "2026-10-11T22:30:38.000Z",
+    "snippet": "북한의 지도 제작자"
+  },
+  {
+    "id": "d98cec5eb9b87335",
+    "title": "우정소프트웨어, 카카오톡 ‘STAFF AI 지원사업 레이더’ 무료 공개 - 뉴스와이어",
+    "link": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9SYkdocGE2VGg2akd5ek56d0p6SGlSLV9hb3l2S0U2OG1DREVFSXJCYXFvNDJSaHV4cGhTQURrSFN5dWdtWXd6ZXNsWmxfbkxFSnZjRnZpbFpaQzJTYklj?oc=5",
+    "source": "정부지원정책",
+    "sourceId": "gov-support",
+    "category": "정부지원정책",
+    "publishedAt": "2026-10-11T22:30:00.000Z",
+    "snippet": "우정소프트웨어, 카카오톡 ‘STAFF AI 지원사업 레이더’ 무료 공개 뉴스와이어"
+  },
+  {
+    "id": "f10c7bba6cde0fea",
+    "title": "'이런 가격은 처음 봤다'…골프복 득템했다고 좋아했는데",
+    "link": "https://www.hankyung.com/article/202610114675i",
+    "source": "한국경제",
+    "sourceId": "hankyung-economy",
+    "category": "경제",
+    "publishedAt": "2026-10-11T22:12:38.000Z",
+    "snippet": ""
+  },
+  {
+    "id": "254f5ac0a84daffd",
+    "title": "\"어린이제품도 있는데\"…리콜 606만개 중 440만개 미회수",
+    "link": "https://www.hankyung.com/article/2026101248387",
+    "source": "한국경제",
+    "sourceId": "hankyung-economy",
+    "category": "경제",
+    "publishedAt": "2026-10-11T22:01:04.000Z",
+    "snippet": ""
+  },
+  {
+    "id": "11c119a02eec78a7",
+    "title": "\"쿠팡·다이소보다 싸다\"…창고서 물건 팔아 월 30억 '대박' [장서우의 하입:hype]",
+    "link": "https://www.hankyung.com/article/202610114723i",
+    "source": "한국경제",
+    "sourceId": "hankyung-economy",
+    "category": "경제",
+    "publishedAt": "2026-10-11T22:00:08.000Z",
+    "snippet": ""
+  },
+  {
+    "id": "20775d3721f976a4",
+    "title": "\"갓 딴 햇밤 바로 구워 먹었는데\"…열흘 기다리라는 이유 [프라이스&]",
+    "link": "https://www.hankyung.com/article/202610114670i",
+    "source": "한국경제",
+    "sourceId": "hankyung-economy",
+    "category": "경제",
+    "publishedAt": "2026-10-11T22:00:04.000Z",
+    "snippet": ""
+  },
+  {
+    "id": "7b2da714e7abcb8b",
+    "title": "매경이 전하는 세상의 지식 (매-세-지, 10월 12일)",
+    "link": "https://www.mk.co.kr/news/economy/12173087",
+    "source": "매일경제 경제",
+    "sourceId": "mk-economy",
+    "category": "경제",
+    "publishedAt": "2026-10-11T22:00:00.000Z",
+    "snippet": "1. 미국 정부가 한국에 정보·방첩 분야에서 수십 년간 이어져 온 ‘동맹의 기준’을 준수해야 한다는 입장을 밝혔습니다. 미국이 한국에 대한 일부 대북 정보 공유를 제한하고, 한미일.."
+  },
+  {
+    "id": "562fa099b67abb6e",
+    "title": "직장인으로서 부를 쌓는 방법",
+    "link": "https://news.hada.io/topic?id=35198",
+    "source": "긱뉴스(GeekNews)",
+    "sourceId": "geeknews",
+    "category": "개발",
+    "publishedAt": "2026-10-11T21:38:27.000Z",
+    "snippet": "직장 생활도 부를 쌓는 동력이 될 수 있지만, 높은 소득 자체가 부는 아님. 일의 가치를 높이는 동시에 늘어난 소득의 상당 부분을 자산으로 전환해야 함 성적은 첫 기회를 여는 데 도움이 되지만, 이후의 경력은 문제 해결과 검증 가능한 성과에..."
+  },
+  {
+    "id": "179dcf478d196b61",
+    "title": "2012년 이전 The Onion 신문을 가지고 계신가요?",
+    "link": "https://news.hada.io/topic?id=35197",
+    "source": "긱뉴스(GeekNews)",
+    "sourceId": "geeknews",
+    "category": "개발",
+    "publishedAt": "2026-10-11T21:35:27.000Z",
+    "snippet": "The Onion이 자사 신문 아카이브에서 누락된 호를 복원하기 위해 독자에게 소장본 제공을 요청함 수집 목록은 1988~2013년 발행분에 걸쳐 있으며, 제목과 달리 2012년과 2013년 발행분도 포함됨 일부 권은 특정 호만 찾지만, 1988~1991년과 2011~..."
+  },
+  {
+    "id": "1675959ce8e684c4",
+    "title": "월요일 한낮 최고 29도…퇴근길 비 예보 [날씨] - 이투데이",
+    "link": "https://news.google.com/rss/articles/CBMibkFVX3lxTE5Mci0wd1dROHhXUjRzdDlZWnlOQVdkZ0RjOXMyN2hLZDVHWnk2NGlSeXBEaTJmNEFucFpzSWVYdlRJVWczaHVuaUplQjZTdnN0LW1MYWlXQXdodkVzUEhaVEtNbFA3UHNPZUV4UWt3?oc=5",
+    "source": "날씨 뉴스",
+    "sourceId": "weather-news",
+    "category": "날씨",
+    "publishedAt": "2026-10-11T21:22:00.000Z",
+    "snippet": "월요일 한낮 최고 29도…퇴근길 비 예보 [날씨] 이투데이"
+  },
+  {
+    "id": "aaadc627d2b8d332",
+    "title": "[단독] \"열차 멈추면 어쩌나\"…해킹 19배 폭증했는데 드러난 '보안 실태'",
+    "link": "https://www.hankyung.com/article/202610103640H",
+    "source": "한국경제",
+    "sourceId": "hankyung-economy",
+    "category": "경제",
+    "publishedAt": "2026-10-11T21:00:11.000Z",
+    "snippet": ""
+  },
+  {
     "id": "fecd71542bd981f9",
     "title": "[오늘 날씨] 선선한 가을, 가끔 소나기.비...이번 주 주간예보와 태풍 진로는? - 헤드라인제주",
     "link": "https://news.google.com/rss/articles/CBMic0FVX3lxTE16bS1HcEFVUlNlR3pzak05NDhyS1RFV3VNOURqYl9GWGtpWVFkTHVpSVhOR2NmU2U1NER0NDNOX1J1NDBPQ0JZN1A3UlNxekFRQjc4ZTZ3UGRrM0RKUld0eEg2elBaV0ZVRi10UVhZLWJUeDA?oc=5",
