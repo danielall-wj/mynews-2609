@@ -1,78 +1,233 @@
 {
-  "lastUpdated": "2026-10-12T08:20:48.180Z",
+  "lastUpdated": "2026-10-12T22:58:34.954Z",
   "feeds": [
     {
       "id": "aitimes",
       "name": "AI타임스",
       "ok": true,
-      "count": 50
+      "count": 46,
+      "recent24h": 27,
+      "newestAt": "2026-10-12T22:00:00.000Z",
+      "consecutiveFailures": 0
     },
     {
       "id": "openai",
       "name": "OpenAI",
       "ok": true,
-      "count": 1287
+      "count": 63,
+      "recent24h": 0,
+      "newestAt": "2026-10-09T07:00:00.000Z",
+      "consecutiveFailures": 0
     },
     {
       "id": "mit-tech-review-ai",
       "name": "MIT Technology Review AI",
       "ok": true,
-      "count": 10
+      "count": 10,
+      "recent24h": 0,
+      "newestAt": "2026-10-09T09:00:00.000Z",
+      "consecutiveFailures": 0
     },
     {
       "id": "mk-economy",
       "name": "매일경제 경제",
       "ok": true,
-      "count": 50
+      "count": 50,
+      "recent24h": 48,
+      "newestAt": "2026-10-12T21:13:49.000Z",
+      "consecutiveFailures": 0
     },
     {
       "id": "hankyung-economy",
       "name": "한국경제",
       "ok": true,
-      "count": 50
+      "count": 50,
+      "recent24h": 50,
+      "newestAt": "2026-10-12T22:30:02.000Z",
+      "consecutiveFailures": 0
     },
     {
       "id": "fed-press",
       "name": "미 연준 보도자료",
       "ok": true,
-      "count": 20
+      "count": 17,
+      "recent24h": 0,
+      "newestAt": "2026-10-09T14:00:00.000Z",
+      "consecutiveFailures": 0
     },
     {
       "id": "platum",
       "name": "플래텀",
       "ok": true,
-      "count": 10
+      "count": 10,
+      "recent24h": 9,
+      "newestAt": "2026-10-12T06:28:13.000Z",
+      "consecutiveFailures": 0
     },
     {
       "id": "tubefilter",
       "name": "Tubefilter",
       "ok": true,
-      "count": 12
+      "count": 12,
+      "recent24h": 0,
+      "newestAt": "2026-10-09T23:00:29.000Z",
+      "consecutiveFailures": 0
     },
     {
       "id": "youtube-blog",
       "name": "YouTube 공식 블로그",
       "ok": true,
-      "count": 20
+      "count": 17,
+      "recent24h": 1,
+      "newestAt": "2026-10-12T07:00:00.000Z",
+      "consecutiveFailures": 0
     },
     {
       "id": "weather-news",
       "name": "날씨 뉴스",
       "ok": true,
-      "count": 100
+      "count": 51,
+      "recent24h": 12,
+      "newestAt": "2026-10-12T22:03:26.000Z",
+      "consecutiveFailures": 0
     },
     {
       "id": "gov-support",
       "name": "정부지원정책",
       "ok": true,
-      "count": 100
+      "count": 45,
+      "recent24h": 18,
+      "newestAt": "2026-10-12T15:44:48.000Z",
+      "consecutiveFailures": 0
     },
     {
       "id": "geeknews",
       "name": "긱뉴스(GeekNews)",
       "ok": true,
-      "count": 50
+      "count": 50,
+      "recent24h": 50,
+      "newestAt": "2026-10-12T22:32:03.000Z",
+      "consecutiveFailures": 0
+    },
+    {
+      "id": "google-trends",
+      "name": "구글 트렌드 인기 검색어",
+      "ok": true,
+      "count": 10,
+      "recent24h": 10,
+      "newestAt": "2026-10-12T21:50:00.000Z",
+      "consecutiveFailures": 0
+    },
+    {
+      "id": "github-trending",
+      "name": "GitHub Trending",
+      "ok": true,
+      "count": 8,
+      "recent24h": 8,
+      "newestAt": "2026-10-12T22:58:34.954Z",
+      "consecutiveFailures": 0
+    },
+    {
+      "id": "bok-issue-notes",
+      "name": "한국은행 이슈노트",
+      "ok": true,
+      "count": 3,
+      "recent24h": 0,
+      "newestAt": "2026-10-06T03:00:00.000Z",
+      "consecutiveFailures": 0
+    },
+    {
+      "id": "bok-research",
+      "name": "한국은행 경제연구",
+      "ok": true,
+      "count": 2,
+      "recent24h": 0,
+      "newestAt": "2026-10-01T03:00:00.000Z",
+      "consecutiveFailures": 0
+    },
+    {
+      "id": "bis-research",
+      "name": "BIS 연구",
+      "ok": true,
+      "count": 0,
+      "recent24h": 0,
+      "newestAt": "2026-08-03T00:00:00.000Z",
+      "consecutiveFailures": 0
+    },
+    {
+      "id": "ecb-blog",
+      "name": "ECB 블로그",
+      "ok": true,
+      "count": 5,
+      "recent24h": 0,
+      "newestAt": "2026-10-08T09:00:00.000Z",
+      "consecutiveFailures": 0
+    },
+    {
+      "id": "ny-fed-liberty-street",
+      "name": "뉴욕연준 Liberty Street",
+      "ok": true,
+      "count": 11,
+      "recent24h": 0,
+      "newestAt": "2026-10-09T11:00:00.000Z",
+      "consecutiveFailures": 0
+    },
+    {
+      "id": "voxeu",
+      "name": "VoxEU (CEPR)",
+      "ok": true,
+      "count": 50,
+      "recent24h": 3,
+      "newestAt": "2026-10-11T23:00:00.000Z",
+      "consecutiveFailures": 0
+    },
+    {
+      "id": "bruegel",
+      "name": "Bruegel",
+      "ok": false,
+      "error": "HTTP 403",
+      "newestAt": null,
+      "consecutiveFailures": 1
+    },
+    {
+      "id": "ai-agents",
+      "name": "AI 검색: 에이전트",
+      "ok": true,
+      "count": 100,
+      "recent24h": 47,
+      "newestAt": "2026-10-12T22:00:00.000Z",
+      "consecutiveFailures": 0
+    },
+    {
+      "id": "ai-automation",
+      "name": "AI 검색: 업무 자동화",
+      "ok": true,
+      "count": 12,
+      "recent24h": 4,
+      "newestAt": "2026-10-12T07:02:05.000Z",
+      "consecutiveFailures": 0
+    },
+    {
+      "id": "ai-adoption",
+      "name": "AI 검색: 도입·활용 사례",
+      "ok": true,
+      "count": 100,
+      "recent24h": 36,
+      "newestAt": "2026-10-12T09:56:18.000Z",
+      "consecutiveFailures": 0
+    },
+    {
+      "id": "kr-institute-reports",
+      "name": "국내 연구소 보고서 뉴스",
+      "ok": true,
+      "count": 5,
+      "recent24h": 3,
+      "newestAt": "2026-10-12T16:38:44.000Z",
+      "consecutiveFailures": 0
     }
   ],
-  "latestCount": 500
+  "latestCount": 752,
+  "migrations": [
+    "aitimes-kst"
+  ]
 }
