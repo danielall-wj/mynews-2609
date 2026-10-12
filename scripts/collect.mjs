@@ -1,4 +1,4 @@
-import { mkdir, writeFile } from "node:fs/promises";
+import { mkdir, readdir, unlink, writeFile } from "node:fs/promises";
 import { createHash } from "node:crypto";
 import path from "node:path";
 import Parser from "rss-parser";
@@ -14,6 +14,8 @@ const TRENDS_PATH = path.join(DATA_DIR, "trends.json");
 
 const LATEST_MAX_ITEMS = 800;
 const LATEST_MAX_AGE_DAYS = 3;
+// Monthly archive files kept, current month included; older ones are deleted.
+const ARCHIVE_RETENTION_MONTHS = 12;
 const TREND_WINDOWS_HOURS = [24, 72];
 const TREND_BASELINE_HOURS = 7 * 24;
 const RELATED_WINDOW_HOURS = 72;
@@ -125,6 +127,25 @@ function dedupeByLink(items) {
   return [...map.values()];
 }
 
+// Deletes archive months older than the retention window and drops them from
+// the index. Scans the directory too, so files missing from the index go as well.
+async function pruneArchive(archiveIndex, now) {
+  const today = new Date(now);
+  const oldestKept = monthKey(
+    new Date(Date.UTC(today.getUTCFullYear(), today.getUTCMonth() - (ARCHIVE_RETENTION_MONTHS - 1), 1)).toISOString()
+  );
+  const files = (await readdir(ARCHIVE_DIR)).filter((name) => /^\d{4}-\d{2}\.json$/.test(name));
+  const keys = new Set([...archiveIndex, ...files.map((name) => name.slice(0, 7))]);
+  const removed = [];
+  for (const key of keys) {
+    if (key >= oldestKept) continue;
+    if (files.includes(`${key}.json`)) await unlink(path.join(ARCHIVE_DIR, `${key}.json`));
+    archiveIndex.delete(key);
+    removed.push(key);
+  }
+  if (removed.length) console.log(`Pruned ${removed.length} archive months older than ${oldestKept}.`);
+}
+
 // Rising keywords per dashboard range: the window vs. the week before it.
 async function buildTrends() {
   const now = Date.now();
@@ -222,6 +243,7 @@ async function main() {
     await writeFile(archivePath, JSON.stringify(merged, null, 2));
     archiveIndex.add(key);
   }
+  await pruneArchive(archiveIndex, Date.now());
   await writeFile(
     ARCHIVE_INDEX_PATH,
     JSON.stringify([...archiveIndex].sort().reverse(), null, 2)

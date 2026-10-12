@@ -5,7 +5,7 @@ RSS 뉴스를 2시간마다 수집해 대시보드로 보여주고, 매일 오�
 ## 구성
 
 - `scripts/feeds.mjs` — 수집할 RSS 피드 목록 (이름 / URL / 카테고리)
-- `scripts/collect.mjs` — 피드를 수집해 `docs/data/latest.json`(최근 3일)과 `docs/data/archive/YYYY-MM.json`(월별 전체 히스토리)에 저장
+- `scripts/collect.mjs` — 피드를 수집해 `docs/data/latest.json`(최근 3일)과 `docs/data/archive/YYYY-MM.json`(월별 히스토리, 이번 달 포함 최근 12개월만 보관)에 저장
   - 수집 시 기사 제목 키워드를 직전 7일과 비교한 급상승 키워드를 `docs/data/trends.json`에 저장
 - `scripts/search-keywords.mjs` — 구글뉴스 키워드 검색 그룹(예: AI 에이전트·업무 자동화)과 기사 태그 규칙. 여기만 고치면 수집·태깅에 반영
 - `scripts/keywords.mjs` — 제목 키워드 추출·급상승 키워드 계산 (2개 이상 피드에서 언급된 키워드만 인정)
