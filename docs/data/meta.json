@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-16T18:03:19.915Z",
+  "lastUpdated": "2026-10-16T21:06:50.093Z",
   "feeds": [
     {
       "id": "aitimes",
@@ -14,9 +14,9 @@
       "id": "openai",
       "name": "OpenAI",
       "ok": true,
-      "count": 64,
+      "count": 65,
       "recent24h": 1,
-      "newestAt": "2026-10-15T19:00:00.000Z",
+      "newestAt": "2026-10-16T00:00:00.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -24,8 +24,8 @@
       "name": "MIT Technology Review AI",
       "ok": true,
       "count": 10,
-      "recent24h": 0,
-      "newestAt": "2026-10-13T10:00:00.000Z",
+      "recent24h": 1,
+      "newestAt": "2026-10-16T18:00:00.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -33,7 +33,7 @@
       "name": "매일경제 경제",
       "ok": true,
       "count": 50,
-      "recent24h": 25,
+      "recent24h": 24,
       "newestAt": "2026-10-16T10:41:03.000Z",
       "consecutiveFailures": 0
     },
@@ -69,8 +69,8 @@
       "name": "Tubefilter",
       "ok": true,
       "count": 12,
-      "recent24h": 4,
-      "newestAt": "2026-10-15T22:56:48.000Z",
+      "recent24h": 5,
+      "newestAt": "2026-10-16T19:26:11.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -86,16 +86,16 @@
       "id": "weather-news",
       "name": "날씨 뉴스",
       "ok": true,
-      "count": 30,
-      "recent24h": 10,
-      "newestAt": "2026-10-16T15:29:39.000Z",
+      "count": 34,
+      "recent24h": 6,
+      "newestAt": "2026-10-16T20:15:00.000Z",
       "consecutiveFailures": 0
     },
     {
       "id": "gov-support",
       "name": "정부지원정책",
       "ok": true,
-      "count": 58,
+      "count": 56,
       "recent24h": 12,
       "newestAt": "2026-10-16T08:58:36.000Z",
       "consecutiveFailures": 0
@@ -105,8 +105,8 @@
       "name": "긱뉴스(GeekNews)",
       "ok": true,
       "count": 50,
-      "recent24h": 49,
-      "newestAt": "2026-10-16T17:39:30.000Z",
+      "recent24h": 46,
+      "newestAt": "2026-10-16T20:45:12.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -115,7 +115,7 @@
       "ok": true,
       "count": 10,
       "recent24h": 10,
-      "newestAt": "2026-10-16T14:50:00.000Z",
+      "newestAt": "2026-10-16T20:00:00.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -124,7 +124,7 @@
       "ok": true,
       "count": 13,
       "recent24h": 13,
-      "newestAt": "2026-10-16T18:03:19.915Z",
+      "newestAt": "2026-10-16T21:06:50.093Z",
       "consecutiveFailures": 0
     },
     {
@@ -187,14 +187,14 @@
       "ok": false,
       "error": "HTTP 403",
       "newestAt": null,
-      "consecutiveFailures": 17
+      "consecutiveFailures": 18
     },
     {
       "id": "ai-agents",
       "name": "AI 검색: 에이전트",
       "ok": true,
       "count": 100,
-      "recent24h": 31,
+      "recent24h": 28,
       "newestAt": "2026-10-16T12:00:01.000Z",
       "consecutiveFailures": 0
     },
@@ -202,7 +202,7 @@
       "id": "ai-automation",
       "name": "AI 검색: 업무 자동화",
       "ok": true,
-      "count": 29,
+      "count": 30,
       "recent24h": 7,
       "newestAt": "2026-10-16T13:49:37.000Z",
       "consecutiveFailures": 0
@@ -212,7 +212,7 @@
       "name": "AI 검색: 도입·활용 사례",
       "ok": true,
       "count": 100,
-      "recent24h": 9,
+      "recent24h": 8,
       "newestAt": "2026-10-16T10:52:45.000Z",
       "consecutiveFailures": 0
     },
@@ -220,9 +220,9 @@
       "id": "kr-institute-reports",
       "name": "국내 연구소 보고서 뉴스",
       "ok": true,
-      "count": 9,
+      "count": 10,
       "recent24h": 0,
-      "newestAt": "2026-10-16T02:15:50.000Z",
+      "newestAt": "2026-10-16T15:34:14.000Z",
       "consecutiveFailures": 0
     }
   ],
