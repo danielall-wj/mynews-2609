@@ -1,12 +1,12 @@
 {
-  "lastUpdated": "2026-10-20T17:01:52.026Z",
+  "lastUpdated": "2026-10-20T21:36:32.962Z",
   "feeds": [
     {
       "id": "aitimes",
       "name": "AI타임스",
       "ok": true,
       "count": 47,
-      "recent24h": 30,
+      "recent24h": 29,
       "newestAt": "2026-10-20T09:26:21.000Z",
       "consecutiveFailures": 0
     },
@@ -14,9 +14,9 @@
       "id": "openai",
       "name": "OpenAI",
       "ok": true,
-      "count": 65,
-      "recent24h": 0,
-      "newestAt": "2026-10-19T12:00:00.000Z",
+      "count": 67,
+      "recent24h": 2,
+      "newestAt": "2026-10-20T10:00:00.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -24,7 +24,7 @@
       "name": "MIT Technology Review AI",
       "ok": true,
       "count": 10,
-      "recent24h": 5,
+      "recent24h": 3,
       "newestAt": "2026-10-20T15:20:25.000Z",
       "consecutiveFailures": 0
     },
@@ -33,8 +33,8 @@
       "name": "매일경제 경제",
       "ok": true,
       "count": 50,
-      "recent24h": 49,
-      "newestAt": "2026-10-20T11:59:04.000Z",
+      "recent24h": 50,
+      "newestAt": "2026-10-20T21:03:22.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -43,7 +43,7 @@
       "ok": true,
       "count": 50,
       "recent24h": 50,
-      "newestAt": "2026-10-20T15:01:18.000Z",
+      "newestAt": "2026-10-20T21:00:12.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -69,15 +69,15 @@
       "name": "Tubefilter",
       "ok": true,
       "count": 12,
-      "recent24h": 3,
-      "newestAt": "2026-10-19T21:02:19.000Z",
+      "recent24h": 1,
+      "newestAt": "2026-10-20T21:12:43.000Z",
       "consecutiveFailures": 0
     },
     {
       "id": "youtube-blog",
       "name": "YouTube 공식 블로그",
       "ok": true,
-      "count": 15,
+      "count": 16,
       "recent24h": 0,
       "newestAt": "2026-10-15T18:00:00.000Z",
       "consecutiveFailures": 0
@@ -86,8 +86,8 @@
       "id": "weather-news",
       "name": "날씨 뉴스",
       "ok": true,
-      "count": 39,
-      "recent24h": 6,
+      "count": 36,
+      "recent24h": 4,
       "newestAt": "2026-10-20T15:00:00.000Z",
       "consecutiveFailures": 0
     },
@@ -95,7 +95,7 @@
       "id": "gov-support",
       "name": "정부지원정책",
       "ok": true,
-      "count": 92,
+      "count": 90,
       "recent24h": 16,
       "newestAt": "2026-10-20T14:08:52.000Z",
       "consecutiveFailures": 0
@@ -105,8 +105,8 @@
       "name": "긱뉴스(GeekNews)",
       "ok": true,
       "count": 50,
-      "recent24h": 50,
-      "newestAt": "2026-10-20T16:43:24.000Z",
+      "recent24h": 48,
+      "newestAt": "2026-10-20T20:36:23.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -115,7 +115,7 @@
       "ok": true,
       "count": 10,
       "recent24h": 10,
-      "newestAt": "2026-10-20T15:10:00.000Z",
+      "newestAt": "2026-10-20T20:20:00.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -124,7 +124,7 @@
       "ok": true,
       "count": 12,
       "recent24h": 12,
-      "newestAt": "2026-10-20T17:01:52.026Z",
+      "newestAt": "2026-10-20T21:36:32.962Z",
       "consecutiveFailures": 0
     },
     {
@@ -187,24 +187,24 @@
       "ok": false,
       "error": "HTTP 403",
       "newestAt": null,
-      "consecutiveFailures": 36
+      "consecutiveFailures": 37
     },
     {
       "id": "ai-agents",
       "name": "AI 검색: 에이전트",
       "ok": true,
       "count": 100,
-      "recent24h": 62,
-      "newestAt": "2026-10-20T13:48:02.000Z",
+      "recent24h": 63,
+      "newestAt": "2026-10-20T20:28:28.000Z",
       "consecutiveFailures": 0
     },
     {
       "id": "ai-automation",
       "name": "AI 검색: 업무 자동화",
       "ok": true,
-      "count": 27,
-      "recent24h": 11,
-      "newestAt": "2026-10-20T09:55:56.000Z",
+      "count": 17,
+      "recent24h": 9,
+      "newestAt": "2026-10-20T18:00:00.000Z",
       "consecutiveFailures": 0
     },
     {
