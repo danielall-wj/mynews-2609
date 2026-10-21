@@ -1,22 +1,22 @@
 {
-  "lastUpdated": "2026-10-21T07:38:28.160Z",
+  "lastUpdated": "2026-10-21T13:47:28.163Z",
   "feeds": [
     {
       "id": "aitimes",
       "name": "AI타임스",
       "ok": true,
-      "count": 47,
-      "recent24h": 26,
-      "newestAt": "2026-10-21T07:32:52.000Z",
+      "count": 44,
+      "recent24h": 29,
+      "newestAt": "2026-10-21T08:57:53.000Z",
       "consecutiveFailures": 0
     },
     {
       "id": "openai",
       "name": "OpenAI",
       "ok": true,
-      "count": 66,
+      "count": 64,
       "recent24h": 1,
-      "newestAt": "2026-10-20T10:00:00.000Z",
+      "newestAt": "2026-10-21T12:00:00.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -24,7 +24,7 @@
       "name": "MIT Technology Review AI",
       "ok": true,
       "count": 10,
-      "recent24h": 3,
+      "recent24h": 1,
       "newestAt": "2026-10-20T15:20:25.000Z",
       "consecutiveFailures": 0
     },
@@ -33,8 +33,8 @@
       "name": "매일경제 경제",
       "ok": true,
       "count": 50,
-      "recent24h": 50,
-      "newestAt": "2026-10-21T07:31:02.000Z",
+      "recent24h": 49,
+      "newestAt": "2026-10-21T13:45:59.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -43,7 +43,7 @@
       "ok": true,
       "count": 50,
       "recent24h": 50,
-      "newestAt": "2026-10-21T06:15:09.000Z",
+      "newestAt": "2026-10-21T12:49:18.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -60,7 +60,7 @@
       "name": "플래텀",
       "ok": true,
       "count": 10,
-      "recent24h": 1,
+      "recent24h": 0,
       "newestAt": "2026-10-20T07:56:23.000Z",
       "consecutiveFailures": 0
     },
@@ -86,18 +86,18 @@
       "id": "weather-news",
       "name": "날씨 뉴스",
       "ok": true,
-      "count": 32,
-      "recent24h": 5,
-      "newestAt": "2026-10-21T01:50:13.000Z",
+      "count": 27,
+      "recent24h": 8,
+      "newestAt": "2026-10-21T10:12:57.000Z",
       "consecutiveFailures": 0
     },
     {
       "id": "gov-support",
       "name": "정부지원정책",
       "ok": true,
-      "count": 92,
-      "recent24h": 12,
-      "newestAt": "2026-10-21T06:35:05.000Z",
+      "count": 90,
+      "recent24h": 7,
+      "newestAt": "2026-10-21T08:43:07.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -105,8 +105,8 @@
       "name": "긱뉴스(GeekNews)",
       "ok": true,
       "count": 50,
-      "recent24h": 42,
-      "newestAt": "2026-10-21T07:37:45.000Z",
+      "recent24h": 39,
+      "newestAt": "2026-10-21T12:32:58.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -115,7 +115,7 @@
       "ok": true,
       "count": 10,
       "recent24h": 10,
-      "newestAt": "2026-10-21T06:30:00.000Z",
+      "newestAt": "2026-10-21T12:40:00.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -124,7 +124,7 @@
       "ok": true,
       "count": 15,
       "recent24h": 15,
-      "newestAt": "2026-10-21T07:38:28.160Z",
+      "newestAt": "2026-10-21T13:47:28.163Z",
       "consecutiveFailures": 0
     },
     {
@@ -148,19 +148,18 @@
     {
       "id": "bis-research",
       "name": "BIS 연구",
-      "ok": true,
-      "count": 0,
-      "recent24h": 0,
+      "ok": false,
+      "error": "HTTP 403",
       "newestAt": "2026-08-03T00:00:00.000Z",
-      "consecutiveFailures": 0
+      "consecutiveFailures": 1
     },
     {
       "id": "ecb-blog",
       "name": "ECB 블로그",
       "ok": true,
-      "count": 6,
+      "count": 7,
       "recent24h": 1,
-      "newestAt": "2026-10-20T09:00:00.000Z",
+      "newestAt": "2026-10-21T09:00:00.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -177,7 +176,7 @@
       "name": "VoxEU (CEPR)",
       "ok": true,
       "count": 50,
-      "recent24h": 2,
+      "recent24h": 3,
       "newestAt": "2026-10-20T23:00:00.000Z",
       "consecutiveFailures": 0
     },
@@ -187,23 +186,23 @@
       "ok": false,
       "error": "HTTP 403",
       "newestAt": null,
-      "consecutiveFailures": 39
+      "consecutiveFailures": 40
     },
     {
       "id": "ai-agents",
       "name": "AI 검색: 에이전트",
       "ok": true,
       "count": 100,
-      "recent24h": 52,
-      "newestAt": "2026-10-21T07:31:37.000Z",
+      "recent24h": 48,
+      "newestAt": "2026-10-21T11:13:40.000Z",
       "consecutiveFailures": 0
     },
     {
       "id": "ai-automation",
       "name": "AI 검색: 업무 자동화",
       "ok": true,
-      "count": 28,
-      "recent24h": 12,
+      "count": 26,
+      "recent24h": 7,
       "newestAt": "2026-10-21T06:46:13.000Z",
       "consecutiveFailures": 0
     },
@@ -212,8 +211,8 @@
       "name": "AI 검색: 도입·활용 사례",
       "ok": true,
       "count": 100,
-      "recent24h": 19,
-      "newestAt": "2026-10-21T05:00:00.000Z",
+      "recent24h": 16,
+      "newestAt": "2026-10-21T08:38:26.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -221,7 +220,7 @@
       "name": "국내 연구소 보고서 뉴스",
       "ok": true,
       "count": 3,
-      "recent24h": 1,
+      "recent24h": 0,
       "newestAt": "2026-10-21T05:07:15.000Z",
       "consecutiveFailures": 0
     }
