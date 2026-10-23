@@ -1,20 +1,20 @@
 {
-  "lastUpdated": "2026-10-23T07:30:46.968Z",
+  "lastUpdated": "2026-10-23T13:25:34.015Z",
   "feeds": [
     {
       "id": "aitimes",
       "name": "AI타임스",
       "ok": true,
-      "count": 47,
-      "recent24h": 23,
-      "newestAt": "2026-10-23T06:54:40.000Z",
+      "count": 45,
+      "recent24h": 30,
+      "newestAt": "2026-10-23T09:59:59.000Z",
       "consecutiveFailures": 0
     },
     {
       "id": "openai",
       "name": "OpenAI",
       "ok": true,
-      "count": 69,
+      "count": 63,
       "recent24h": 2,
       "newestAt": "2026-10-23T00:00:00.000Z",
       "consecutiveFailures": 0
@@ -24,7 +24,7 @@
       "name": "MIT Technology Review AI",
       "ok": true,
       "count": 10,
-      "recent24h": 4,
+      "recent24h": 2,
       "newestAt": "2026-10-22T21:17:29.000Z",
       "consecutiveFailures": 0
     },
@@ -33,8 +33,8 @@
       "name": "매일경제 경제",
       "ok": true,
       "count": 50,
-      "recent24h": 50,
-      "newestAt": "2026-10-23T07:28:14.000Z",
+      "recent24h": 39,
+      "newestAt": "2026-10-23T11:30:33.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -43,7 +43,7 @@
       "ok": true,
       "count": 50,
       "recent24h": 50,
-      "newestAt": "2026-10-23T06:23:33.000Z",
+      "newestAt": "2026-10-23T12:00:03.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -69,7 +69,7 @@
       "name": "Tubefilter",
       "ok": true,
       "count": 12,
-      "recent24h": 6,
+      "recent24h": 5,
       "newestAt": "2026-10-22T22:42:34.000Z",
       "consecutiveFailures": 0
     },
@@ -86,9 +86,9 @@
       "id": "weather-news",
       "name": "날씨 뉴스",
       "ok": true,
-      "count": 37,
-      "recent24h": 10,
-      "newestAt": "2026-10-23T07:10:00.000Z",
+      "count": 38,
+      "recent24h": 9,
+      "newestAt": "2026-10-23T13:00:00.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -96,7 +96,7 @@
       "name": "정부지원정책",
       "ok": true,
       "count": 100,
-      "recent24h": 3,
+      "recent24h": 2,
       "newestAt": "2026-10-23T00:15:00.000Z",
       "consecutiveFailures": 0
     },
@@ -105,8 +105,8 @@
       "name": "긱뉴스(GeekNews)",
       "ok": true,
       "count": 50,
-      "recent24h": 44,
-      "newestAt": "2026-10-23T05:49:49.000Z",
+      "recent24h": 41,
+      "newestAt": "2026-10-23T12:35:23.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -115,7 +115,7 @@
       "ok": true,
       "count": 10,
       "recent24h": 10,
-      "newestAt": "2026-10-23T06:10:00.000Z",
+      "newestAt": "2026-10-23T12:20:00.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -124,7 +124,7 @@
       "ok": true,
       "count": 9,
       "recent24h": 9,
-      "newestAt": "2026-10-23T07:30:46.968Z",
+      "newestAt": "2026-10-23T13:25:34.015Z",
       "consecutiveFailures": 0
     },
     {
@@ -177,7 +177,7 @@
       "name": "VoxEU (CEPR)",
       "ok": true,
       "count": 50,
-      "recent24h": 2,
+      "recent24h": 3,
       "newestAt": "2026-10-22T23:00:00.000Z",
       "consecutiveFailures": 0
     },
@@ -187,24 +187,24 @@
       "ok": false,
       "error": "HTTP 403",
       "newestAt": null,
-      "consecutiveFailures": 48
+      "consecutiveFailures": 49
     },
     {
       "id": "ai-agents",
       "name": "AI 검색: 에이전트",
       "ok": true,
       "count": 100,
-      "recent24h": 40,
-      "newestAt": "2026-10-23T07:26:17.000Z",
+      "recent24h": 33,
+      "newestAt": "2026-10-23T10:05:28.000Z",
       "consecutiveFailures": 0
     },
     {
       "id": "ai-automation",
       "name": "AI 검색: 업무 자동화",
       "ok": true,
-      "count": 29,
-      "recent24h": 1,
-      "newestAt": "2026-10-23T02:41:59.000Z",
+      "count": 31,
+      "recent24h": 2,
+      "newestAt": "2026-10-23T06:24:51.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -212,8 +212,8 @@
       "name": "AI 검색: 도입·활용 사례",
       "ok": true,
       "count": 100,
-      "recent24h": 15,
-      "newestAt": "2026-10-23T02:46:41.000Z",
+      "recent24h": 9,
+      "newestAt": "2026-10-23T06:30:00.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -222,7 +222,7 @@
       "ok": true,
       "count": 1,
       "recent24h": 0,
-      "newestAt": "2026-10-23T03:43:08.000Z",
+      "newestAt": "2026-10-23T07:28:37.000Z",
       "consecutiveFailures": 0
     }
   ],
