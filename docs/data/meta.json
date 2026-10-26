@@ -1,13 +1,13 @@
 {
-  "lastUpdated": "2026-10-26T04:45:23.335Z",
+  "lastUpdated": "2026-10-26T13:00:02.446Z",
   "feeds": [
     {
       "id": "aitimes",
       "name": "AI타임스",
       "ok": true,
-      "count": 46,
-      "recent24h": 19,
-      "newestAt": "2026-10-26T04:12:52.000Z",
+      "count": 48,
+      "recent24h": 34,
+      "newestAt": "2026-10-26T10:07:01.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -24,8 +24,8 @@
       "name": "MIT Technology Review AI",
       "ok": true,
       "count": 10,
-      "recent24h": 0,
-      "newestAt": "2026-10-22T21:17:29.000Z",
+      "recent24h": 1,
+      "newestAt": "2026-10-26T09:01:00.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -33,8 +33,8 @@
       "name": "매일경제 경제",
       "ok": true,
       "count": 50,
-      "recent24h": 30,
-      "newestAt": "2026-10-26T02:02:13.000Z",
+      "recent24h": 38,
+      "newestAt": "2026-10-26T11:09:21.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -43,23 +43,24 @@
       "ok": true,
       "count": 50,
       "recent24h": 50,
-      "newestAt": "2026-10-26T04:10:48.000Z",
+      "newestAt": "2026-10-26T11:50:05.000Z",
       "consecutiveFailures": 0
     },
     {
       "id": "fed-press",
       "name": "미 연준 보도자료",
-      "ok": false,
-      "error": "HTTP 404",
+      "ok": true,
+      "count": 11,
+      "recent24h": 0,
       "newestAt": "2026-10-16T15:00:00.000Z",
-      "consecutiveFailures": 1
+      "consecutiveFailures": 0
     },
     {
       "id": "platum",
       "name": "플래텀",
       "ok": true,
       "count": 10,
-      "recent24h": 3,
+      "recent24h": 1,
       "newestAt": "2026-10-25T23:01:00.000Z",
       "consecutiveFailures": 0
     },
@@ -68,8 +69,8 @@
       "name": "Tubefilter",
       "ok": true,
       "count": 12,
-      "recent24h": 0,
-      "newestAt": "2026-10-24T06:26:50.000Z",
+      "recent24h": 1,
+      "newestAt": "2026-10-26T10:00:54.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -85,18 +86,18 @@
       "id": "weather-news",
       "name": "날씨 뉴스",
       "ok": true,
-      "count": 31,
+      "count": 28,
       "recent24h": 7,
-      "newestAt": "2026-10-26T03:16:45.000Z",
+      "newestAt": "2026-10-26T12:30:00.000Z",
       "consecutiveFailures": 0
     },
     {
       "id": "gov-support",
       "name": "정부지원정책",
       "ok": true,
-      "count": 89,
-      "recent24h": 3,
-      "newestAt": "2026-10-26T03:00:00.000Z",
+      "count": 90,
+      "recent24h": 5,
+      "newestAt": "2026-10-26T11:16:33.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -105,7 +106,7 @@
       "ok": true,
       "count": 50,
       "recent24h": 50,
-      "newestAt": "2026-10-26T04:27:59.000Z",
+      "newestAt": "2026-10-26T11:40:09.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -114,16 +115,16 @@
       "ok": true,
       "count": 10,
       "recent24h": 10,
-      "newestAt": "2026-10-26T03:40:00.000Z",
+      "newestAt": "2026-10-26T11:50:00.000Z",
       "consecutiveFailures": 0
     },
     {
       "id": "github-trending",
       "name": "GitHub Trending",
       "ok": true,
-      "count": 10,
-      "recent24h": 10,
-      "newestAt": "2026-10-26T04:45:23.335Z",
+      "count": 11,
+      "recent24h": 4,
+      "newestAt": "2026-10-26T13:00:02.446Z",
       "consecutiveFailures": 0
     },
     {
@@ -181,29 +182,21 @@
       "consecutiveFailures": 0
     },
     {
-      "id": "bruegel",
-      "name": "Bruegel",
-      "ok": false,
-      "error": "HTTP 403",
-      "newestAt": null,
-      "consecutiveFailures": 62
-    },
-    {
       "id": "ai-agents",
       "name": "AI 검색: 에이전트",
       "ok": true,
       "count": 100,
-      "recent24h": 27,
-      "newestAt": "2026-10-26T03:50:03.000Z",
+      "recent24h": 47,
+      "newestAt": "2026-10-26T12:46:58.000Z",
       "consecutiveFailures": 0
     },
     {
       "id": "ai-automation",
       "name": "AI 검색: 업무 자동화",
       "ok": true,
-      "count": 24,
-      "recent24h": 2,
-      "newestAt": "2026-10-26T02:31:55.000Z",
+      "count": 25,
+      "recent24h": 5,
+      "newestAt": "2026-10-26T06:45:44.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -211,8 +204,8 @@
       "name": "AI 검색: 도입·활용 사례",
       "ok": true,
       "count": 100,
-      "recent24h": 8,
-      "newestAt": "2026-10-26T04:00:03.000Z",
+      "recent24h": 14,
+      "newestAt": "2026-10-26T11:28:06.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -221,12 +214,14 @@
       "ok": true,
       "count": 2,
       "recent24h": 0,
-      "newestAt": "2026-10-26T00:48:19.000Z",
+      "newestAt": "2026-10-26T07:38:59.000Z",
       "consecutiveFailures": 0
     }
   ],
-  "latestCount": 731,
+  "latestCount": 767,
   "migrations": [
-    "aitimes-kst"
-  ]
+    "aitimes-kst",
+    "kst-months-first-seen"
+  ],
+  "excludeSignature": "[[\"aitimes\",[\"/AI 생성 영상/\"]],[\"weather-news\",[\"/vietnam\\\\.vn/i\"]]]"
 }
