@@ -13,8 +13,11 @@ const META_PATH = path.join(DATA_DIR, "meta.json");
 const ARCHIVE_INDEX_PATH = path.join(ARCHIVE_DIR, "index.json");
 const TRENDS_PATH = path.join(DATA_DIR, "trends.json");
 
-const LATEST_MAX_ITEMS = 800;
+const LATEST_MAX_ITEMS = 1500;
 const LATEST_MAX_AGE_DAYS = 3;
+// Busy feeds (한국경제 alone posts ~100 a day) would otherwise fill the window
+// and push quieter feeds' 2–3 day old stories out before LATEST_MAX_AGE_DAYS.
+const LATEST_MAX_PER_FEED = 200;
 // Older items from a feed are ignored. Some feeds (OpenAI) return their whole
 // back catalogue on every run, which used to create archive files back to 2015.
 const MAX_ITEM_AGE_DAYS = 30;
@@ -88,6 +91,8 @@ function decodeEntities(text) {
 
 // Feeds like AI타임스 send "2026-10-12 18:00:00" with no zone; JS would read
 // it as UTC. `feed.timezone` ("+09:00") says what zone such dates are in.
+// A date in the future is treated as missing: clamping it to "now" re-stamped
+// the item on every run and pinned it to the top until the date came true.
 function parsePublished(item, feed, fetchedAt) {
   let ms = null;
   const raw = item.pubDate?.trim();
@@ -96,14 +101,14 @@ function parsePublished(item, feed, fetchedAt) {
   } else if (item.isoDate || raw) {
     ms = Date.parse(item.isoDate ?? raw);
   }
-  if (!Number.isFinite(ms)) return null;
-  return Math.min(ms, fetchedAt + FUTURE_TOLERANCE_MS);
+  if (!Number.isFinite(ms) || ms > fetchedAt + FUTURE_TOLERANCE_MS) return null;
+  return ms;
 }
 
 const FEEDS_BY_ID = new Map(FEEDS.map((feed) => [feed.id, feed]));
 
 // Per-feed `exclude` patterns; also applied to stored items so a newly added
-// pattern clears matching items out of latest.json right away.
+// pattern clears matching items out of latest.json and the archive right away.
 function isExcluded(item) {
   const patterns = FEEDS_BY_ID.get(item.sourceId)?.exclude;
   if (!patterns) return false;
@@ -130,9 +135,9 @@ async function fetchFeed(feed, fetchedAt) {
       const link = item.link?.trim();
       // Only http(s): a "javascript:" link would run script when clicked
       if (!link || !/^https?:\/\//i.test(link)) return null;
-      // Undated items count as seen now
+      // Undated items are left out here; main() adds their first-seen dates
       const published = parsePublished(item, feed, fetchedAt);
-      newestMs = Math.max(newestMs ?? 0, published ?? fetchedAt);
+      if (published !== null) newestMs = Math.max(newestMs ?? 0, published);
       if (published !== null && published < oldest) return null;
       const { title, publisher } = splitPublisher(decodeEntities((item.title ?? "").trim()), link);
       let snippet = (item.contentSnippet ?? "").replace(/\s+/g, " ").trim();
@@ -145,7 +150,7 @@ async function fetchFeed(feed, fetchedAt) {
         source: feed.name,
         sourceId: feed.id,
         category: feed.category,
-        // Undated items are resolved in mergeItems: first-seen time, kept stable
+        // Undated items get their first-seen time in resolveUndated
         publishedAt: published === null ? null : new Date(published).toISOString(),
         snippet: snippet.slice(0, 240),
         ...(publisher ? { publisher } : {}),
@@ -171,20 +176,61 @@ function withTags(item) {
   return tags.length ? { ...rest, tags } : rest;
 }
 
-// Freshly fetched items replace stored copies (so fixes like corrected dates
-// take effect), except that an undated item keeps the date it was first seen
-// with — re-stamping it "now" every run kept it at the top forever.
-function mergeItems(existing, incoming, fetchedAt) {
+// Freshly fetched items replace stored copies, so fixes like corrected dates
+// take effect. Undated items already carry their first-seen date by now.
+function mergeItems(existing, incoming) {
   const map = new Map(existing.map((item) => [item.id, item]));
-  for (const item of incoming) {
-    const previous = map.get(item.id);
-    const publishedAt = item.publishedAt ?? previous?.publishedAt ?? new Date(fetchedAt).toISOString();
-    map.set(item.id, { ...item, publishedAt });
-  }
+  for (const item of incoming) map.set(item.id, item);
   return [...map.values()];
 }
 
 const byNewest = (a, b) => new Date(b.publishedAt) - new Date(a.publishedAt);
+const earlier = (a, b) => (!a || (b && Date.parse(b) < Date.parse(a)) ? b : a);
+
+async function readWholeArchive(archiveIndex) {
+  const items = [];
+  for (const key of archiveIndex) {
+    items.push(...(await readJson(path.join(ARCHIVE_DIR, `${key}.json`), [])));
+  }
+  return items;
+}
+
+// Re-files every archived item by monthKey; months left empty are written as
+// empty files so nothing stale remains in them.
+async function rewriteArchive(archiveIndex, items) {
+  const byMonth = new Map([...archiveIndex].map((key) => [key, []]));
+  for (const item of items) {
+    const key = monthKey(item.publishedAt);
+    if (!byMonth.has(key)) byMonth.set(key, []);
+    byMonth.get(key).push(item);
+  }
+  for (const [key, monthItems] of byMonth) {
+    await writeJson(path.join(ARCHIVE_DIR, `${key}.json`), monthItems.sort(byNewest));
+    archiveIndex.add(key);
+  }
+}
+
+// Undated items (GitHub Trending, or a pubDate in the future) are dated by when
+// they were first seen. Looking only in latest.json wasn't enough: once an item
+// aged out of the window it came back as brand new if the feed still listed it.
+// The archive keeps every item for ARCHIVE_RETENTION_MONTHS, so it's read too.
+async function resolveUndated(items, previousLatest, archiveIndex, fetchedAt) {
+  const undated = items.filter((item) => item.publishedAt === null);
+  if (!undated.length) return;
+  const firstSeen = new Map(previousLatest.map((item) => [item.id, item.publishedAt]));
+  if (undated.some((item) => !firstSeen.has(item.id))) {
+    for (const item of await readWholeArchive(archiveIndex)) {
+      firstSeen.set(item.id, earlier(firstSeen.get(item.id), item.publishedAt));
+    }
+  }
+  const now = new Date(fetchedAt).toISOString();
+  for (const item of undated) item.publishedAt = firstSeen.get(item.id) ?? now;
+}
+
+// Exclude patterns as text, stored in meta.json to notice when they change
+const EXCLUDE_SIGNATURE = JSON.stringify(
+  FEEDS.filter((feed) => feed.exclude).map((feed) => [feed.id, feed.exclude.map(String)])
+);
 
 // One-off data fixes, recorded in meta.json so each runs exactly once.
 const MIGRATIONS = {
@@ -195,21 +241,24 @@ const MIGRATIONS = {
       item.sourceId === "aitimes"
         ? { ...item, publishedAt: new Date(Date.parse(item.publishedAt) - 9 * 60 * 60 * 1000).toISOString() }
         : item;
-    const archived = [];
-    for (const key of archiveIndex) {
-      archived.push(...(await readJson(path.join(ARCHIVE_DIR, `${key}.json`), [])).map(shift));
-    }
-    const byMonth = new Map([...archiveIndex].map((key) => [key, []]));
-    for (const item of archived) {
-      const key = monthKey(item.publishedAt);
-      if (!byMonth.has(key)) byMonth.set(key, []);
-      byMonth.get(key).push(item);
-    }
-    for (const [key, items] of byMonth) {
-      await writeJson(path.join(ARCHIVE_DIR, `${key}.json`), items.sort(byNewest));
-      archiveIndex.add(key);
-    }
+    await rewriteArchive(archiveIndex, (await readWholeArchive(archiveIndex)).map(shift));
     return latest.map(shift);
+  },
+  // Months are now split in KST, and undated GitHub Trending items may have
+  // been re-stamped into a later month: keep one copy at its earliest date
+  // (in latest.json too) and re-file everything.
+  "kst-months-first-seen": async ({ latest, archiveIndex }) => {
+    const archived = await readWholeArchive(archiveIndex);
+    const isTrending = (item) => item.sourceId === "github-trending";
+    const firstSeen = new Map();
+    for (const item of [...latest, ...archived].filter(isTrending)) {
+      firstSeen.set(item.id, earlier(firstSeen.get(item.id), item.publishedAt));
+    }
+    const withFirstSeen = (item) => (isTrending(item) ? { ...item, publishedAt: firstSeen.get(item.id) } : item);
+    const kept = new Set();
+    const deduped = archived.filter((item) => !isTrending(item) || (!kept.has(item.id) && kept.add(item.id)));
+    await rewriteArchive(archiveIndex, deduped.map(withFirstSeen));
+    return latest.map(withFirstSeen);
   },
 };
 
@@ -222,10 +271,10 @@ function writeJson(filePath, data) {
 // Deletes archive months older than the retention window and drops them from
 // the index. Scans the directory too, so files missing from the index go as well.
 async function pruneArchive(archiveIndex, now) {
-  const today = new Date(now);
-  const oldestKept = monthKey(
-    new Date(Date.UTC(today.getUTCFullYear(), today.getUTCMonth() - (ARCHIVE_RETENTION_MONTHS - 1), 1)).toISOString()
-  );
+  const [year, month] = monthKey(new Date(now).toISOString()).split("-").map(Number);
+  const oldestKept = new Date(Date.UTC(year, month - 1 - (ARCHIVE_RETENTION_MONTHS - 1), 1))
+    .toISOString()
+    .slice(0, 7);
   const files = (await readdir(ARCHIVE_DIR)).filter((name) => /^\d{4}-\d{2}\.json$/.test(name));
   const keys = new Set([...archiveIndex, ...files.map((name) => name.slice(0, 7))]);
   const removed = [];
@@ -291,22 +340,39 @@ async function main() {
 
   const results = await Promise.allSettled(FEEDS.map((feed) => fetchFeed(feed, fetchedAt)));
 
-  const newItems = [];
+  const newItems = results.flatMap((result) => (result.status === "fulfilled" ? result.value : []));
+
+  let previousLatest = await readJson(LATEST_PATH, []);
+  const archiveIndex = new Set(await readJson(ARCHIVE_INDEX_PATH, []));
+  const migrations = new Set(previousMeta.migrations ?? []);
+  for (const [name, migrate] of Object.entries(MIGRATIONS)) {
+    if (migrations.has(name)) continue;
+    previousLatest = await migrate({ latest: previousLatest, archiveIndex });
+    migrations.add(name);
+    console.log(`Applied migration: ${name}`);
+  }
+
+  await resolveUndated(newItems, previousLatest, archiveIndex, fetchedAt);
+
   const feedStatus = [];
   results.forEach((result, i) => {
     const feed = FEEDS[i];
     const previous = previousFeeds.get(feed.id);
     if (result.status === "fulfilled") {
-      newItems.push(...result.value);
-      const fetchedIso = new Date(fetchedAt).toISOString();
-      const dates = result.value.map((item) => item.publishedAt ?? fetchedIso);
+      // First-seen dates count here, so an undated feed whose mirror stalls
+      // shows as stale instead of "updated just now" on every run
+      const dates = result.value.map((item) => item.publishedAt);
+      const newestAt = [result.value.newestAt, ...dates].reduce(
+        (newest, d) => (d && (!newest || Date.parse(d) > Date.parse(newest)) ? d : newest),
+        null
+      );
       feedStatus.push({
         id: feed.id,
         name: feed.name,
         ok: true,
         count: result.value.length,
         recent24h: dates.filter((d) => Date.parse(d) >= fetchedAt - DAY_MS).length,
-        newestAt: result.value.newestAt ?? previous?.newestAt ?? null,
+        newestAt: newestAt ?? previous?.newestAt ?? null,
         consecutiveFailures: 0,
       });
     } else {
@@ -321,43 +387,49 @@ async function main() {
     }
   });
 
-  let previousLatest = await readJson(LATEST_PATH, []);
-  const archiveIndex = new Set(await readJson(ARCHIVE_INDEX_PATH, []));
-  const migrations = new Set(previousMeta.migrations ?? []);
-  for (const [name, migrate] of Object.entries(MIGRATIONS)) {
-    if (migrations.has(name)) continue;
-    previousLatest = await migrate({ latest: previousLatest, archiveIndex });
-    migrations.add(name);
-    console.log(`Applied migration: ${name}`);
-  }
-
   // --- latest.json: recent window across all feeds, for the live dashboard ---
   const cutoff = fetchedAt - LATEST_MAX_AGE_DAYS * DAY_MS;
+  const perFeed = new Map();
+  const underFeedCap = (item) => {
+    const count = (perFeed.get(item.sourceId) ?? 0) + 1;
+    perFeed.set(item.sourceId, count);
+    return count <= LATEST_MAX_PER_FEED;
+  };
   const latest = markDuplicates(
-    mergeItems(previousLatest, newItems, fetchedAt)
+    mergeItems(previousLatest, newItems)
       .filter((item) => new Date(item.publishedAt).getTime() >= cutoff && !isExcluded(item))
       .sort(byNewest)
+      .filter(underFeedCap)
       .slice(0, LATEST_MAX_ITEMS)
       .map(withTags)
   );
   await writeJson(LATEST_PATH, latest);
-  const latestById = new Map(latest.map((item) => [item.id, item]));
 
   // --- monthly archive: full history, for search ---
+  // A changed exclude list is applied to every month, not just this run's
+  if (previousMeta.excludeSignature !== EXCLUDE_SIGNATURE) {
+    const archived = await readWholeArchive(archiveIndex);
+    const kept = archived.filter((item) => !isExcluded(item));
+    if (kept.length < archived.length) {
+      await rewriteArchive(archiveIndex, kept);
+      console.log(`Removed ${archived.length - kept.length} archived items matching exclude patterns.`);
+    }
+  }
+
   const itemsByMonth = new Map();
   for (const item of newItems) {
-    // Undated items take the date mergeItems settled on for latest
-    const resolved = { ...item, publishedAt: item.publishedAt ?? latestById.get(item.id)?.publishedAt };
-    if (!resolved.publishedAt) continue;
-    const key = monthKey(resolved.publishedAt);
+    const key = monthKey(item.publishedAt);
     if (!itemsByMonth.has(key)) itemsByMonth.set(key, []);
-    itemsByMonth.get(key).push(resolved);
+    itemsByMonth.get(key).push(item);
   }
 
   for (const [key, items] of itemsByMonth) {
     const archivePath = path.join(ARCHIVE_DIR, `${key}.json`);
     const existing = await readJson(archivePath, []);
-    const merged = mergeItems(existing, items, fetchedAt).sort(byNewest).map(withTags);
+    const merged = mergeItems(existing, items)
+      .filter((item) => !isExcluded(item))
+      .sort(byNewest)
+      .map(withTags);
     await writeJson(archivePath, merged);
     archiveIndex.add(key);
   }
@@ -374,6 +446,7 @@ async function main() {
         feeds: feedStatus,
         latestCount: latest.length,
         migrations: [...migrations],
+        excludeSignature: EXCLUDE_SIGNATURE,
       },
       null,
       2

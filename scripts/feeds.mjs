@@ -144,12 +144,8 @@ export const FEEDS = [
     url: "https://cepr.org/rss/vox-content",
     category: "해외 연구",
   },
-  {
-    id: "bruegel",
-    name: "Bruegel",
-    url: "https://www.bruegel.org/rss.xml",
-    category: "해외 연구",
-  },
+  // Bruegel (https://www.bruegel.org/rss.xml) was removed: it answered every
+  // request with HTTP 403 and never delivered an item.
   // Keyword searches, one Google News feed per group in search-keywords.mjs
   ...SEARCH_GROUPS.map((group) => ({
     id: group.id,

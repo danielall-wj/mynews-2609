@@ -34,9 +34,14 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           # meta.json/trends.json change on every run; only commit when the
-          # news itself changed, to keep history from ballooning
-          if git diff --quiet -- docs/data/latest.json docs/data/archive; then
-            echo "No new items; skipping commit."
+          # news itself changed, to keep history from ballooning — or when a
+          # feed's failure count changed, since the next run counts on from
+          # the committed meta.json and alerts would otherwise come late
+          feed_state='JSON.parse(require("fs").readFileSync(0,"utf8")).feeds.map(f=>[f.id,f.ok,f.consecutiveFailures])'
+          committed=$(git show HEAD:docs/data/meta.json | node -p "JSON.stringify($feed_state)")
+          current=$(node -p "JSON.stringify($feed_state)" < docs/data/meta.json)
+          if git diff --quiet -- docs/data/latest.json docs/data/archive && [ "$committed" = "$current" ]; then
+            echo "No new items or feed state changes; skipping commit."
             exit 0
           fi
           git add docs/data

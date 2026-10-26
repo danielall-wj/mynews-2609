@@ -13,8 +13,12 @@ export async function readJson(filePath, fallback) {
   }
 }
 
+const KST_OFFSET_MS = 9 * 60 * 60 * 1000;
+
+// YYYY-MM in Korean time, so a story from 08:00 KST on the 1st files under
+// the new month rather than the previous one (UTC is still the 31st then).
 export function monthKey(dateIso) {
-  return dateIso.slice(0, 7); // YYYY-MM
+  return new Date(Date.parse(dateIso) + KST_OFFSET_MS).toISOString().slice(0, 7);
 }
 
 // Archived items published at or after fromMs, across every month file the
