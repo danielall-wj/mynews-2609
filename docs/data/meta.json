@@ -1,22 +1,22 @@
 {
-  "lastUpdated": "2026-10-28T08:29:05.659Z",
+  "lastUpdated": "2026-10-28T16:37:30.017Z",
   "feeds": [
     {
       "id": "aitimes",
       "name": "AI타임스",
       "ok": true,
-      "count": 49,
+      "count": 50,
       "recent24h": 32,
-      "newestAt": "2026-10-28T08:21:47.000Z",
+      "newestAt": "2026-10-28T09:37:43.000Z",
       "consecutiveFailures": 0
     },
     {
       "id": "openai",
       "name": "OpenAI",
       "ok": true,
-      "count": 71,
-      "recent24h": 1,
-      "newestAt": "2026-10-27T15:00:00.000Z",
+      "count": 73,
+      "recent24h": 2,
+      "newestAt": "2026-10-28T09:30:00.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -25,7 +25,7 @@
       "ok": true,
       "count": 10,
       "recent24h": 1,
-      "newestAt": "2026-10-27T11:19:18.000Z",
+      "newestAt": "2026-10-28T12:00:00.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -33,8 +33,8 @@
       "name": "매일경제 경제",
       "ok": true,
       "count": 50,
-      "recent24h": 33,
-      "newestAt": "2026-10-28T08:21:57.000Z",
+      "recent24h": 39,
+      "newestAt": "2026-10-28T08:45:35.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -43,7 +43,7 @@
       "ok": true,
       "count": 50,
       "recent24h": 50,
-      "newestAt": "2026-10-28T07:26:58.000Z",
+      "newestAt": "2026-10-28T15:34:42.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -69,35 +69,35 @@
       "name": "Tubefilter",
       "ok": true,
       "count": 12,
-      "recent24h": 3,
-      "newestAt": "2026-10-28T02:43:03.000Z",
+      "recent24h": 4,
+      "newestAt": "2026-10-28T13:04:47.000Z",
       "consecutiveFailures": 0
     },
     {
       "id": "youtube-blog",
       "name": "YouTube 공식 블로그",
       "ok": true,
-      "count": 9,
-      "recent24h": 0,
-      "newestAt": "2026-10-27T01:00:00.000Z",
+      "count": 10,
+      "recent24h": 1,
+      "newestAt": "2026-10-28T11:00:00.000Z",
       "consecutiveFailures": 0
     },
     {
       "id": "weather-news",
       "name": "날씨 뉴스",
       "ok": true,
-      "count": 33,
-      "recent24h": 8,
-      "newestAt": "2026-10-28T07:11:00.000Z",
+      "count": 35,
+      "recent24h": 7,
+      "newestAt": "2026-10-28T15:00:00.000Z",
       "consecutiveFailures": 0
     },
     {
       "id": "gov-support",
       "name": "정부지원정책",
       "ok": true,
-      "count": 96,
-      "recent24h": 16,
-      "newestAt": "2026-10-28T07:16:39.000Z",
+      "count": 92,
+      "recent24h": 14,
+      "newestAt": "2026-10-28T08:24:53.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -105,8 +105,8 @@
       "name": "긱뉴스(GeekNews)",
       "ok": true,
       "count": 50,
-      "recent24h": 49,
-      "newestAt": "2026-10-28T07:34:14.000Z",
+      "recent24h": 43,
+      "newestAt": "2026-10-28T15:33:26.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -115,7 +115,7 @@
       "ok": true,
       "count": 10,
       "recent24h": 10,
-      "newestAt": "2026-10-28T07:10:00.000Z",
+      "newestAt": "2026-10-28T15:30:00.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -123,7 +123,7 @@
       "name": "GitHub Trending",
       "ok": true,
       "count": 11,
-      "recent24h": 5,
+      "recent24h": 3,
       "newestAt": "2026-10-28T08:29:05.659Z",
       "consecutiveFailures": 0
     },
@@ -167,7 +167,7 @@
       "id": "ny-fed-liberty-street",
       "name": "뉴욕연준 Liberty Street",
       "ok": true,
-      "count": 11,
+      "count": 10,
       "recent24h": 0,
       "newestAt": "2026-10-15T11:00:00.000Z",
       "consecutiveFailures": 0
@@ -186,15 +186,15 @@
       "name": "AI 검색: 에이전트",
       "ok": true,
       "count": 100,
-      "recent24h": 38,
-      "newestAt": "2026-10-28T07:55:00.000Z",
+      "recent24h": 28,
+      "newestAt": "2026-10-28T13:07:03.000Z",
       "consecutiveFailures": 0
     },
     {
       "id": "ai-automation",
       "name": "AI 검색: 업무 자동화",
       "ok": true,
-      "count": 17,
+      "count": 12,
       "recent24h": 2,
       "newestAt": "2026-10-28T03:39:04.000Z",
       "consecutiveFailures": 0
@@ -204,8 +204,8 @@
       "name": "AI 검색: 도입·활용 사례",
       "ok": true,
       "count": 100,
-      "recent24h": 29,
-      "newestAt": "2026-10-28T07:56:42.000Z",
+      "recent24h": 33,
+      "newestAt": "2026-10-28T12:45:49.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -214,11 +214,11 @@
       "ok": true,
       "count": 1,
       "recent24h": 0,
-      "newestAt": "2026-10-27T18:08:35.000Z",
+      "newestAt": "2026-10-28T11:18:33.000Z",
       "consecutiveFailures": 0
     }
   ],
-  "latestCount": 1129,
+  "latestCount": 1138,
   "migrations": [
     "aitimes-kst",
     "kst-months-first-seen"
