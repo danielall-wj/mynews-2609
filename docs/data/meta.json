@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-27T22:12:53.790Z",
+  "lastUpdated": "2026-10-28T01:21:46.376Z",
   "feeds": [
     {
       "id": "aitimes",
@@ -7,16 +7,16 @@
       "ok": true,
       "count": 48,
       "recent24h": 32,
-      "newestAt": "2026-10-27T22:00:00.000Z",
+      "newestAt": "2026-10-28T00:00:00.000Z",
       "consecutiveFailures": 0
     },
     {
       "id": "openai",
       "name": "OpenAI",
       "ok": true,
-      "count": 71,
+      "count": 72,
       "recent24h": 2,
-      "newestAt": "2026-10-27T07:00:00.000Z",
+      "newestAt": "2026-10-27T15:00:00.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -33,8 +33,8 @@
       "name": "매일경제 경제",
       "ok": true,
       "count": 50,
-      "recent24h": 41,
-      "newestAt": "2026-10-27T21:20:38.000Z",
+      "recent24h": 35,
+      "newestAt": "2026-10-28T00:45:46.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -43,7 +43,7 @@
       "ok": true,
       "count": 50,
       "recent24h": 50,
-      "newestAt": "2026-10-27T21:00:15.000Z",
+      "newestAt": "2026-10-28T00:33:46.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -70,7 +70,7 @@
       "ok": true,
       "count": 12,
       "recent24h": 3,
-      "newestAt": "2026-10-27T21:15:42.000Z",
+      "newestAt": "2026-10-27T22:25:59.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -78,7 +78,7 @@
       "name": "YouTube 공식 블로그",
       "ok": true,
       "count": 9,
-      "recent24h": 1,
+      "recent24h": 0,
       "newestAt": "2026-10-27T01:00:00.000Z",
       "consecutiveFailures": 0
     },
@@ -86,9 +86,9 @@
       "id": "weather-news",
       "name": "날씨 뉴스",
       "ok": true,
-      "count": 37,
-      "recent24h": 12,
-      "newestAt": "2026-10-27T19:38:54.000Z",
+      "count": 34,
+      "recent24h": 13,
+      "newestAt": "2026-10-28T00:12:03.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -97,7 +97,7 @@
       "ok": true,
       "count": 77,
       "recent24h": 8,
-      "newestAt": "2026-10-27T14:23:26.000Z",
+      "newestAt": "2026-10-28T00:40:20.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -105,8 +105,8 @@
       "name": "긱뉴스(GeekNews)",
       "ok": true,
       "count": 50,
-      "recent24h": 44,
-      "newestAt": "2026-10-27T21:33:09.000Z",
+      "recent24h": 45,
+      "newestAt": "2026-10-28T01:12:07.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -115,7 +115,7 @@
       "ok": true,
       "count": 10,
       "recent24h": 10,
-      "newestAt": "2026-10-27T21:00:00.000Z",
+      "newestAt": "2026-10-28T00:00:00.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -177,8 +177,8 @@
       "name": "VoxEU (CEPR)",
       "ok": true,
       "count": 50,
-      "recent24h": 3,
-      "newestAt": "2026-10-27T00:00:00.000Z",
+      "recent24h": 2,
+      "newestAt": "2026-10-28T00:00:00.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -186,8 +186,8 @@
       "name": "AI 검색: 에이전트",
       "ok": true,
       "count": 100,
-      "recent24h": 44,
-      "newestAt": "2026-10-27T16:06:45.000Z",
+      "recent24h": 38,
+      "newestAt": "2026-10-28T00:44:03.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -205,7 +205,7 @@
       "ok": true,
       "count": 100,
       "recent24h": 25,
-      "newestAt": "2026-10-27T17:59:47.000Z",
+      "newestAt": "2026-10-28T01:00:00.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -218,7 +218,7 @@
       "consecutiveFailures": 0
     }
   ],
-  "latestCount": 995,
+  "latestCount": 1030,
   "migrations": [
     "aitimes-kst",
     "kst-months-first-seen"
