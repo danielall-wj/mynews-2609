@@ -1,13 +1,13 @@
 {
-  "lastUpdated": "2026-10-29T19:37:39.379Z",
+  "lastUpdated": "2026-10-29T23:56:27.852Z",
   "feeds": [
     {
       "id": "aitimes",
       "name": "AI타임스",
       "ok": true,
       "count": 48,
-      "recent24h": 36,
-      "newestAt": "2026-10-29T09:00:15.000Z",
+      "recent24h": 41,
+      "newestAt": "2026-10-29T22:21:59.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -24,7 +24,7 @@
       "name": "MIT Technology Review AI",
       "ok": true,
       "count": 10,
-      "recent24h": 2,
+      "recent24h": 1,
       "newestAt": "2026-10-29T10:11:12.000Z",
       "consecutiveFailures": 0
     },
@@ -33,8 +33,8 @@
       "name": "매일경제 경제",
       "ok": true,
       "count": 50,
-      "recent24h": 36,
-      "newestAt": "2026-10-29T15:45:12.000Z",
+      "recent24h": 38,
+      "newestAt": "2026-10-29T23:17:20.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -43,7 +43,7 @@
       "ok": true,
       "count": 50,
       "recent24h": 50,
-      "newestAt": "2026-10-29T15:46:29.000Z",
+      "newestAt": "2026-10-29T23:17:31.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -51,8 +51,8 @@
       "name": "미 연준 보도자료",
       "ok": true,
       "count": 12,
-      "recent24h": 0,
-      "newestAt": "2026-10-28T18:00:00.000Z",
+      "recent24h": 1,
+      "newestAt": "2026-10-29T20:30:00.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -69,8 +69,8 @@
       "name": "Tubefilter",
       "ok": true,
       "count": 12,
-      "recent24h": 4,
-      "newestAt": "2026-10-28T23:03:43.000Z",
+      "recent24h": 2,
+      "newestAt": "2026-10-29T21:47:28.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -86,9 +86,9 @@
       "id": "weather-news",
       "name": "날씨 뉴스",
       "ok": true,
-      "count": 40,
-      "recent24h": 8,
-      "newestAt": "2026-10-29T16:16:01.000Z",
+      "count": 41,
+      "recent24h": 11,
+      "newestAt": "2026-10-29T23:17:41.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -105,8 +105,8 @@
       "name": "긱뉴스(GeekNews)",
       "ok": true,
       "count": 50,
-      "recent24h": 48,
-      "newestAt": "2026-10-29T17:43:37.000Z",
+      "recent24h": 50,
+      "newestAt": "2026-10-29T23:26:41.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -115,7 +115,7 @@
       "ok": true,
       "count": 10,
       "recent24h": 10,
-      "newestAt": "2026-10-29T18:30:00.000Z",
+      "newestAt": "2026-10-29T22:50:00.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -187,16 +187,16 @@
       "ok": true,
       "count": 100,
       "recent24h": 44,
-      "newestAt": "2026-10-29T19:24:47.000Z",
+      "newestAt": "2026-10-29T21:00:00.000Z",
       "consecutiveFailures": 0
     },
     {
       "id": "ai-automation",
       "name": "AI 검색: 업무 자동화",
       "ok": true,
-      "count": 13,
-      "recent24h": 1,
-      "newestAt": "2026-10-29T19:23:35.000Z",
+      "count": 14,
+      "recent24h": 2,
+      "newestAt": "2026-10-29T19:36:18.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -204,7 +204,7 @@
       "name": "AI 검색: 도입·활용 사례",
       "ok": true,
       "count": 100,
-      "recent24h": 31,
+      "recent24h": 28,
       "newestAt": "2026-10-29T16:08:55.000Z",
       "consecutiveFailures": 0
     },
@@ -212,13 +212,13 @@
       "id": "kr-institute-reports",
       "name": "국내 연구소 보고서 뉴스",
       "ok": true,
-      "count": 2,
-      "recent24h": 1,
+      "count": 4,
+      "recent24h": 3,
       "newestAt": "2026-10-29T15:55:15.000Z",
       "consecutiveFailures": 0
     }
   ],
-  "latestCount": 1126,
+  "latestCount": 1130,
   "migrations": [
     "aitimes-kst",
     "kst-months-first-seen"
