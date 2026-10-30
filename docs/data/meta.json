@@ -1,21 +1,21 @@
 {
-  "lastUpdated": "2026-10-30T05:46:42.230Z",
+  "lastUpdated": "2026-10-30T12:53:40.797Z",
   "feeds": [
     {
       "id": "aitimes",
       "name": "AI타임스",
       "ok": true,
       "count": 48,
-      "recent24h": 31,
-      "newestAt": "2026-10-30T03:47:16.000Z",
+      "recent24h": 14,
+      "newestAt": "2026-10-30T10:36:17.000Z",
       "consecutiveFailures": 0
     },
     {
       "id": "openai",
       "name": "OpenAI",
       "ok": true,
-      "count": 72,
-      "recent24h": 3,
+      "count": 70,
+      "recent24h": 1,
       "newestAt": "2026-10-29T17:00:00.000Z",
       "consecutiveFailures": 0
     },
@@ -24,7 +24,7 @@
       "name": "MIT Technology Review AI",
       "ok": true,
       "count": 10,
-      "recent24h": 1,
+      "recent24h": 0,
       "newestAt": "2026-10-29T10:11:12.000Z",
       "consecutiveFailures": 0
     },
@@ -33,8 +33,8 @@
       "name": "매일경제 경제",
       "ok": true,
       "count": 50,
-      "recent24h": 37,
-      "newestAt": "2026-10-30T05:22:42.000Z",
+      "recent24h": 38,
+      "newestAt": "2026-10-30T12:45:34.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -43,7 +43,7 @@
       "ok": true,
       "count": 50,
       "recent24h": 50,
-      "newestAt": "2026-10-30T05:38:41.000Z",
+      "newestAt": "2026-10-30T11:07:06.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -61,7 +61,7 @@
       "ok": true,
       "count": 10,
       "recent24h": 10,
-      "newestAt": "2026-10-30T04:28:57.000Z",
+      "newestAt": "2026-10-30T08:26:03.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -86,18 +86,18 @@
       "id": "weather-news",
       "name": "날씨 뉴스",
       "ok": true,
-      "count": 37,
-      "recent24h": 12,
-      "newestAt": "2026-10-30T04:05:10.000Z",
+      "count": 46,
+      "recent24h": 16,
+      "newestAt": "2026-10-30T12:30:00.000Z",
       "consecutiveFailures": 0
     },
     {
       "id": "gov-support",
       "name": "정부지원정책",
       "ok": true,
-      "count": 84,
-      "recent24h": 3,
-      "newestAt": "2026-10-30T01:38:27.000Z",
+      "count": 20,
+      "recent24h": 5,
+      "newestAt": "2026-10-30T09:15:56.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -105,8 +105,8 @@
       "name": "긱뉴스(GeekNews)",
       "ok": true,
       "count": 50,
-      "recent24h": 50,
-      "newestAt": "2026-10-30T04:47:44.000Z",
+      "recent24h": 48,
+      "newestAt": "2026-10-30T09:48:52.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -115,16 +115,16 @@
       "ok": true,
       "count": 10,
       "recent24h": 10,
-      "newestAt": "2026-10-30T04:40:00.000Z",
+      "newestAt": "2026-10-30T11:40:00.000Z",
       "consecutiveFailures": 0
     },
     {
       "id": "github-trending",
       "name": "GitHub Trending",
       "ok": true,
-      "count": 14,
+      "count": 11,
       "recent24h": 4,
-      "newestAt": "2026-10-29T12:58:52.666Z",
+      "newestAt": "2026-10-30T12:53:40.797Z",
       "consecutiveFailures": 0
     },
     {
@@ -167,7 +167,7 @@
       "id": "ny-fed-liberty-street",
       "name": "뉴욕연준 Liberty Street",
       "ok": true,
-      "count": 9,
+      "count": 8,
       "recent24h": 0,
       "newestAt": "2026-10-15T11:00:00.000Z",
       "consecutiveFailures": 0
@@ -177,7 +177,7 @@
       "name": "VoxEU (CEPR)",
       "ok": true,
       "count": 50,
-      "recent24h": 3,
+      "recent24h": 4,
       "newestAt": "2026-10-30T00:00:00.000Z",
       "consecutiveFailures": 0
     },
@@ -186,15 +186,15 @@
       "name": "AI 검색: 에이전트",
       "ok": true,
       "count": 100,
-      "recent24h": 31,
-      "newestAt": "2026-10-30T05:07:22.000Z",
+      "recent24h": 26,
+      "newestAt": "2026-10-30T07:27:29.000Z",
       "consecutiveFailures": 0
     },
     {
       "id": "ai-automation",
       "name": "AI 검색: 업무 자동화",
       "ok": true,
-      "count": 11,
+      "count": 10,
       "recent24h": 3,
       "newestAt": "2026-10-30T05:37:00.000Z",
       "consecutiveFailures": 0
@@ -204,21 +204,21 @@
       "name": "AI 검색: 도입·활용 사례",
       "ok": true,
       "count": 100,
-      "recent24h": 18,
-      "newestAt": "2026-10-30T03:46:21.000Z",
+      "recent24h": 13,
+      "newestAt": "2026-10-30T10:28:08.000Z",
       "consecutiveFailures": 0
     },
     {
       "id": "kr-institute-reports",
       "name": "국내 연구소 보고서 뉴스",
       "ok": true,
-      "count": 4,
-      "recent24h": 2,
-      "newestAt": "2026-10-30T04:52:41.000Z",
+      "count": 2,
+      "recent24h": 0,
+      "newestAt": "2026-10-30T11:44:12.000Z",
       "consecutiveFailures": 0
     }
   ],
-  "latestCount": 1078,
+  "latestCount": 1054,
   "migrations": [
     "aitimes-kst",
     "kst-months-first-seen"
