@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-10-31T12:26:40.001Z",
+  "lastUpdated": "2026-10-31T18:33:26.777Z",
   "feeds": [
     {
       "id": "aitimes",
@@ -14,7 +14,7 @@
       "id": "openai",
       "name": "OpenAI",
       "ok": true,
-      "count": 73,
+      "count": 71,
       "recent24h": 0,
       "newestAt": "2026-10-30T09:30:00.000Z",
       "consecutiveFailures": 0
@@ -33,8 +33,8 @@
       "name": "매일경제 경제",
       "ok": true,
       "count": 50,
-      "recent24h": 6,
-      "newestAt": "2026-10-31T08:59:02.000Z",
+      "recent24h": 5,
+      "newestAt": "2026-10-31T13:41:44.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -42,7 +42,7 @@
       "name": "한국경제",
       "ok": true,
       "count": 50,
-      "recent24h": 21,
+      "recent24h": 20,
       "newestAt": "2026-10-31T11:00:02.000Z",
       "consecutiveFailures": 0
     },
@@ -60,8 +60,8 @@
       "name": "플래텀",
       "ok": true,
       "count": 10,
-      "recent24h": 0,
-      "newestAt": "2026-10-30T08:26:03.000Z",
+      "recent24h": 1,
+      "newestAt": "2026-10-30T19:57:22.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -77,7 +77,7 @@
       "id": "youtube-blog",
       "name": "YouTube 공식 블로그",
       "ok": true,
-      "count": 8,
+      "count": 7,
       "recent24h": 0,
       "newestAt": "2026-10-28T19:00:00.000Z",
       "consecutiveFailures": 0
@@ -86,16 +86,16 @@
       "id": "weather-news",
       "name": "날씨 뉴스",
       "ok": true,
-      "count": 46,
-      "recent24h": 10,
-      "newestAt": "2026-10-31T10:41:36.000Z",
+      "count": 52,
+      "recent24h": 13,
+      "newestAt": "2026-10-31T15:16:40.000Z",
       "consecutiveFailures": 0
     },
     {
       "id": "gov-support",
       "name": "정부지원정책",
       "ok": true,
-      "count": 77,
+      "count": 13,
       "recent24h": 0,
       "newestAt": "2026-10-30T09:15:56.000Z",
       "consecutiveFailures": 0
@@ -105,8 +105,8 @@
       "name": "긱뉴스(GeekNews)",
       "ok": true,
       "count": 50,
-      "recent24h": 35,
-      "newestAt": "2026-10-31T12:01:44.000Z",
+      "recent24h": 38,
+      "newestAt": "2026-10-31T17:49:44.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -115,7 +115,7 @@
       "ok": true,
       "count": 10,
       "recent24h": 10,
-      "newestAt": "2026-10-31T11:20:00.000Z",
+      "newestAt": "2026-10-31T17:20:00.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -123,7 +123,7 @@
       "name": "GitHub Trending",
       "ok": true,
       "count": 15,
-      "recent24h": 7,
+      "recent24h": 4,
       "newestAt": "2026-10-31T12:26:40.001Z",
       "consecutiveFailures": 0
     },
@@ -168,7 +168,7 @@
       "name": "뉴욕연준 Liberty Street",
       "ok": true,
       "count": 8,
-      "recent24h": 1,
+      "recent24h": 0,
       "newestAt": "2026-10-30T14:00:00.000Z",
       "consecutiveFailures": 0
     },
@@ -194,9 +194,9 @@
       "id": "ai-automation",
       "name": "AI 검색: 업무 자동화",
       "ok": true,
-      "count": 9,
+      "count": 10,
       "recent24h": 0,
-      "newestAt": "2026-10-30T05:37:00.000Z",
+      "newestAt": "2026-10-30T14:01:05.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -218,7 +218,7 @@
       "consecutiveFailures": 0
     }
   ],
-  "latestCount": 936,
+  "latestCount": 943,
   "migrations": [
     "aitimes-kst",
     "kst-months-first-seen"
