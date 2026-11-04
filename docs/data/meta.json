@@ -1,13 +1,13 @@
 {
-  "lastUpdated": "2026-11-03T21:47:08.929Z",
+  "lastUpdated": "2026-11-04T02:19:45.191Z",
   "feeds": [
     {
       "id": "aitimes",
       "name": "AI타임스",
       "ok": true,
       "count": 50,
-      "recent24h": 41,
-      "newestAt": "2026-11-03T09:04:42.000Z",
+      "recent24h": 36,
+      "newestAt": "2026-11-04T00:00:00.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -15,7 +15,7 @@
       "name": "OpenAI",
       "ok": true,
       "count": 81,
-      "recent24h": 4,
+      "recent24h": 3,
       "newestAt": "2026-11-03T12:00:00.000Z",
       "consecutiveFailures": 0
     },
@@ -34,7 +34,7 @@
       "ok": true,
       "count": 50,
       "recent24h": 31,
-      "newestAt": "2026-11-03T21:04:15.000Z",
+      "newestAt": "2026-11-04T01:49:55.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -43,24 +43,23 @@
       "ok": true,
       "count": 50,
       "recent24h": 50,
-      "newestAt": "2026-11-03T16:02:46.000Z",
+      "newestAt": "2026-11-04T01:16:07.000Z",
       "consecutiveFailures": 0
     },
     {
       "id": "fed-press",
       "name": "미 연준 보도자료",
-      "ok": true,
-      "count": 8,
-      "recent24h": 0,
+      "ok": false,
+      "error": "HTTP 404",
       "newestAt": "2026-10-29T20:30:00.000Z",
-      "consecutiveFailures": 0
+      "consecutiveFailures": 1
     },
     {
       "id": "platum",
       "name": "플래텀",
       "ok": true,
       "count": 10,
-      "recent24h": 10,
+      "recent24h": 9,
       "newestAt": "2026-11-03T05:25:06.000Z",
       "consecutiveFailures": 0
     },
@@ -69,8 +68,8 @@
       "name": "Tubefilter",
       "ok": true,
       "count": 12,
-      "recent24h": 3,
-      "newestAt": "2026-11-03T21:37:17.000Z",
+      "recent24h": 4,
+      "newestAt": "2026-11-04T00:14:22.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -86,18 +85,18 @@
       "id": "weather-news",
       "name": "날씨 뉴스",
       "ok": true,
-      "count": 56,
-      "recent24h": 14,
-      "newestAt": "2026-11-03T19:33:51.000Z",
+      "count": 55,
+      "recent24h": 18,
+      "newestAt": "2026-11-04T02:00:37.000Z",
       "consecutiveFailures": 0
     },
     {
       "id": "gov-support",
       "name": "정부지원정책",
       "ok": true,
-      "count": 15,
-      "recent24h": 9,
-      "newestAt": "2026-11-03T13:24:26.000Z",
+      "count": 70,
+      "recent24h": 6,
+      "newestAt": "2026-11-03T22:29:00.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -106,7 +105,7 @@
       "ok": true,
       "count": 20,
       "recent24h": 20,
-      "newestAt": "2026-11-03T21:32:50.000Z",
+      "newestAt": "2026-11-04T00:30:02.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -115,7 +114,7 @@
       "ok": true,
       "count": 10,
       "recent24h": 10,
-      "newestAt": "2026-11-03T20:40:00.000Z",
+      "newestAt": "2026-11-04T01:00:00.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -177,8 +176,8 @@
       "name": "VoxEU (CEPR)",
       "ok": true,
       "count": 50,
-      "recent24h": 3,
-      "newestAt": "2026-11-03T00:00:00.000Z",
+      "recent24h": 2,
+      "newestAt": "2026-11-04T00:00:00.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -186,17 +185,17 @@
       "name": "AI 검색: 에이전트",
       "ok": true,
       "count": 100,
-      "recent24h": 48,
-      "newestAt": "2026-11-03T21:19:00.000Z",
+      "recent24h": 64,
+      "newestAt": "2026-11-04T02:05:00.000Z",
       "consecutiveFailures": 0
     },
     {
       "id": "ai-automation",
       "name": "AI 검색: 업무 자동화",
       "ok": true,
-      "count": 10,
+      "count": 13,
       "recent24h": 3,
-      "newestAt": "2026-11-03T06:28:31.000Z",
+      "newestAt": "2026-11-03T07:44:28.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -205,20 +204,20 @@
       "ok": true,
       "count": 100,
       "recent24h": 29,
-      "newestAt": "2026-11-03T21:34:08.000Z",
+      "newestAt": "2026-11-04T02:00:00.000Z",
       "consecutiveFailures": 0
     },
     {
       "id": "kr-institute-reports",
       "name": "국내 연구소 보고서 뉴스",
       "ok": true,
-      "count": 9,
+      "count": 7,
       "recent24h": 6,
       "newestAt": "2026-11-03T21:26:51.000Z",
       "consecutiveFailures": 0
     }
   ],
-  "latestCount": 1045,
+  "latestCount": 1074,
   "migrations": [
     "aitimes-kst",
     "kst-months-first-seen"
