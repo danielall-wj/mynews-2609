@@ -1,21 +1,21 @@
 {
-  "lastUpdated": "2026-11-04T19:44:12.696Z",
+  "lastUpdated": "2026-11-05T00:52:51.455Z",
   "feeds": [
     {
       "id": "aitimes",
       "name": "AI타임스",
       "ok": true,
       "count": 49,
-      "recent24h": 40,
-      "newestAt": "2026-11-04T09:24:21.000Z",
+      "recent24h": 42,
+      "newestAt": "2026-11-05T00:00:00.000Z",
       "consecutiveFailures": 0
     },
     {
       "id": "openai",
       "name": "OpenAI",
       "ok": true,
-      "count": 81,
-      "recent24h": 2,
+      "count": 84,
+      "recent24h": 3,
       "newestAt": "2026-11-04T14:30:00.000Z",
       "consecutiveFailures": 0
     },
@@ -33,8 +33,8 @@
       "name": "매일경제 경제",
       "ok": true,
       "count": 50,
-      "recent24h": 44,
-      "newestAt": "2026-11-04T11:57:41.000Z",
+      "recent24h": 46,
+      "newestAt": "2026-11-05T00:49:50.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -43,14 +43,14 @@
       "ok": true,
       "count": 50,
       "recent24h": 50,
-      "newestAt": "2026-11-04T16:07:32.000Z",
+      "newestAt": "2026-11-05T00:00:44.000Z",
       "consecutiveFailures": 0
     },
     {
       "id": "fed-press",
       "name": "미 연준 보도자료",
       "ok": true,
-      "count": 8,
+      "count": 7,
       "recent24h": 0,
       "newestAt": "2026-10-29T20:30:00.000Z",
       "consecutiveFailures": 0
@@ -60,7 +60,7 @@
       "name": "플래텀",
       "ok": true,
       "count": 10,
-      "recent24h": 7,
+      "recent24h": 6,
       "newestAt": "2026-11-04T02:36:10.000Z",
       "consecutiveFailures": 0
     },
@@ -70,7 +70,7 @@
       "ok": true,
       "count": 12,
       "recent24h": 4,
-      "newestAt": "2026-11-04T00:14:22.000Z",
+      "newestAt": "2026-11-04T23:39:59.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -86,18 +86,18 @@
       "id": "weather-news",
       "name": "날씨 뉴스",
       "ok": true,
-      "count": 54,
-      "recent24h": 12,
-      "newestAt": "2026-11-04T15:05:00.000Z",
+      "count": 51,
+      "recent24h": 10,
+      "newestAt": "2026-11-05T00:11:31.000Z",
       "consecutiveFailures": 0
     },
     {
       "id": "gov-support",
       "name": "정부지원정책",
       "ok": true,
-      "count": 28,
-      "recent24h": 17,
-      "newestAt": "2026-11-04T13:02:44.000Z",
+      "count": 31,
+      "recent24h": 19,
+      "newestAt": "2026-11-05T00:07:28.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -106,7 +106,7 @@
       "ok": true,
       "count": 20,
       "recent24h": 20,
-      "newestAt": "2026-11-04T18:44:45.000Z",
+      "newestAt": "2026-11-04T23:35:24.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -115,7 +115,7 @@
       "ok": true,
       "count": 10,
       "recent24h": 10,
-      "newestAt": "2026-11-04T18:40:00.000Z",
+      "newestAt": "2026-11-04T23:40:00.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -178,7 +178,7 @@
       "ok": true,
       "count": 50,
       "recent24h": 2,
-      "newestAt": "2026-11-04T00:00:00.000Z",
+      "newestAt": "2026-11-05T00:00:00.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -186,8 +186,8 @@
       "name": "AI 검색: 에이전트",
       "ok": true,
       "count": 100,
-      "recent24h": 43,
-      "newestAt": "2026-11-04T16:24:00.000Z",
+      "recent24h": 41,
+      "newestAt": "2026-11-05T00:35:06.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -195,7 +195,7 @@
       "name": "AI 검색: 업무 자동화",
       "ok": true,
       "count": 11,
-      "recent24h": 4,
+      "recent24h": 3,
       "newestAt": "2026-11-04T18:02:36.000Z",
       "consecutiveFailures": 0
     },
@@ -205,7 +205,7 @@
       "ok": true,
       "count": 100,
       "recent24h": 21,
-      "newestAt": "2026-11-04T10:36:54.000Z",
+      "newestAt": "2026-11-05T00:42:35.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -218,7 +218,7 @@
       "consecutiveFailures": 0
     }
   ],
-  "latestCount": 1172,
+  "latestCount": 1168,
   "migrations": [
     "aitimes-kst",
     "kst-months-first-seen"
