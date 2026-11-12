@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2026-11-12T09:49:06.944Z",
+  "lastUpdated": "2026-11-12T18:18:44.655Z",
   "feeds": [
     {
       "id": "aitimes",
@@ -14,9 +14,9 @@
       "id": "openai",
       "name": "OpenAI",
       "ok": true,
-      "count": 93,
-      "recent24h": 1,
-      "newestAt": "2026-11-12T00:00:00.000Z",
+      "count": 94,
+      "recent24h": 3,
+      "newestAt": "2026-11-12T09:30:00.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -33,8 +33,8 @@
       "name": "매일경제 경제",
       "ok": true,
       "count": 50,
-      "recent24h": 35,
-      "newestAt": "2026-11-12T08:39:59.000Z",
+      "recent24h": 39,
+      "newestAt": "2026-11-12T15:11:18.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -43,16 +43,16 @@
       "ok": true,
       "count": 50,
       "recent24h": 50,
-      "newestAt": "2026-11-12T08:41:02.000Z",
+      "newestAt": "2026-11-12T14:38:29.000Z",
       "consecutiveFailures": 0
     },
     {
       "id": "fed-press",
       "name": "미 연준 보도자료",
       "ok": true,
-      "count": 6,
-      "recent24h": 0,
-      "newestAt": "2026-11-09T21:00:00.000Z",
+      "count": 7,
+      "recent24h": 2,
+      "newestAt": "2026-11-12T17:45:00.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -77,9 +77,9 @@
       "id": "youtube-blog",
       "name": "YouTube 공식 블로그",
       "ok": true,
-      "count": 10,
-      "recent24h": 0,
-      "newestAt": "2026-11-10T19:00:00.000Z",
+      "count": 11,
+      "recent24h": 1,
+      "newestAt": "2026-11-12T15:00:00.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -87,17 +87,17 @@
       "name": "날씨 뉴스",
       "ok": true,
       "count": 27,
-      "recent24h": 7,
-      "newestAt": "2026-11-12T07:36:18.000Z",
+      "recent24h": 6,
+      "newestAt": "2026-11-12T15:00:00.000Z",
       "consecutiveFailures": 0
     },
     {
       "id": "gov-support",
       "name": "정부지원정책",
       "ok": true,
-      "count": 31,
-      "recent24h": 18,
-      "newestAt": "2026-11-12T08:29:15.000Z",
+      "count": 32,
+      "recent24h": 21,
+      "newestAt": "2026-11-12T11:00:54.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -106,7 +106,7 @@
       "ok": true,
       "count": 20,
       "recent24h": 20,
-      "newestAt": "2026-11-12T06:30:10.000Z",
+      "newestAt": "2026-11-12T16:39:35.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -115,7 +115,7 @@
       "ok": true,
       "count": 10,
       "recent24h": 10,
-      "newestAt": "2026-11-12T08:30:00.000Z",
+      "newestAt": "2026-11-12T16:30:00.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -158,18 +158,18 @@
       "id": "ecb-blog",
       "name": "ECB 블로그",
       "ok": true,
-      "count": 7,
+      "count": 8,
       "recent24h": 1,
-      "newestAt": "2026-11-11T10:00:00.000Z",
+      "newestAt": "2026-11-12T10:00:00.000Z",
       "consecutiveFailures": 0
     },
     {
       "id": "ny-fed-liberty-street",
       "name": "뉴욕연준 Liberty Street",
       "ok": true,
-      "count": 8,
-      "recent24h": 0,
-      "newestAt": "2026-11-10T16:00:00.000Z",
+      "count": 9,
+      "recent24h": 1,
+      "newestAt": "2026-11-12T13:25:00.000Z",
       "consecutiveFailures": 0
     },
     {
@@ -186,15 +186,15 @@
       "name": "AI 검색: 에이전트",
       "ok": true,
       "count": 100,
-      "recent24h": 46,
-      "newestAt": "2026-11-12T09:30:30.000Z",
+      "recent24h": 53,
+      "newestAt": "2026-11-12T18:00:00.000Z",
       "consecutiveFailures": 0
     },
     {
       "id": "ai-automation",
       "name": "AI 검색: 업무 자동화",
       "ok": true,
-      "count": 10,
+      "count": 9,
       "recent24h": 2,
       "newestAt": "2026-11-12T07:26:50.000Z",
       "consecutiveFailures": 0
@@ -204,7 +204,7 @@
       "name": "AI 검색: 도입·활용 사례",
       "ok": true,
       "count": 100,
-      "recent24h": 15,
+      "recent24h": 17,
       "newestAt": "2026-11-12T08:47:51.000Z",
       "consecutiveFailures": 0
     },
@@ -212,13 +212,13 @@
       "id": "kr-institute-reports",
       "name": "국내 연구소 보고서 뉴스",
       "ok": true,
-      "count": 11,
+      "count": 10,
       "recent24h": 9,
-      "newestAt": "2026-11-12T05:48:01.000Z",
+      "newestAt": "2026-11-12T10:33:00.000Z",
       "consecutiveFailures": 0
     }
   ],
-  "latestCount": 983,
+  "latestCount": 1017,
   "migrations": [
     "aitimes-kst",
     "kst-months-first-seen"
